@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Data Informatics and Technologies</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="DITech is an innovative consulting firm for data management, storage, AI, backup and cyber recovery. We ask why first, so every solution adds real value.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a classification ledger. Left-aligned editorial type, a live data sorter in the hero,
+   sections as labeled ledger rows, one amber "highlighter" accent used for meaning. */
+:root {
+  --bg: #F2F5F4;
+  --surface: #FFFFFF;
+  --ink: #0E2A2E;
+  --muted: #4B6266;
+  --line: #CFDAD8;
+  --petrol: #13606A;
+  --petrol-soft: #DCEBEA;
+  --marker: #F1C232;
+  --marker-ink: #1C1A10;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2rem, 4vw, 2.75rem);
+  --step-4: clamp(2.6rem, 6.4vw, 5rem);
+  --wrap: 72rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1A1C; --surface: #112427; --ink: #E3EDEC; --muted: #9FB4B6; --line: #23403F;
+    --petrol: #5EC3C9; --petrol-soft: #16363A; --marker: #F2C94C; --marker-ink: #1C1A10;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1A1C; --surface: #112427; --ink: #E3EDEC; --muted: #9FB4B6; --line: #23403F;
+  --petrol: #5EC3C9; --petrol-soft: #16363A; --marker: #F2C94C; --marker-ink: #1C1A10;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--marker); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+p { margin: 0; }
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--petrol);
+}
+.mark {
+  background: linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 92%, transparent 92%);
+  padding: 0 0.08em;
+  color: inherit;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; }
+.brand-mark { width: 30px; height: 30px; flex: none; }
+.nav-links { display: flex; gap: 22px; align-items: center; font-size: 0.95rem; }
+.nav-links a { text-decoration: none; color: var(--muted); }
+.nav-links a:hover { color: var(--ink); }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 600 0.95rem/1 var(--font-body);
+  padding: 13px 20px; border-radius: 999px; text-decoration: none; cursor: pointer;
+  border: 1.5px solid var(--ink); background: var(--ink); color: var(--bg);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.nav .btn { padding: 10px 16px; }
+@media (max-width: 760px) { .nav-links a:not(.btn) { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(40px, 7vw, 88px) clamp(40px, 6vw, 72px); }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.hero-grid > * { min-width: 0; }
+.hero h1 { font-size: var(--step-4); font-weight: 800; margin-top: 18px; }
+.hero h1 .line2 { display: block; color: var(--petrol); }
+.hero .lede { font-size: 1.15rem; color: var(--muted); max-width: 34rem; margin-top: 22px; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+/* Sorter */
+.sorter {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px -30px color-mix(in srgb, var(--ink) 45%, transparent);
+  overflow: hidden;
+}
+.sorter-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 16px; border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted);
+}
+.sorter-bar .file { color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sorter-bar button {
+  font: 500 var(--step--1) var(--font-mono); color: var(--petrol); background: none;
+  border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; flex: none;
+}
+.inbox {
+  display: flex; flex-wrap: wrap; gap: 8px; padding: 16px; min-height: 64px;
+  border-bottom: 1px dashed var(--line);
+}
+.inbox:empty::before {
+  content: "inbox empty · 0 unclassified";
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted);
+}
+.buckets { display: grid; grid-template-columns: 1fr 1fr; }
+.bucket { padding: 14px 16px; min-height: 112px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.bucket:nth-child(2n) { border-right: 0; }
+.bucket:nth-last-child(-n+2) { border-bottom: 0; }
+.bucket h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; margin-bottom: 10px; }
+.bucket h3 .count { color: var(--ink); font-variant-numeric: tabular-nums; }
+.bucket .items { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-family: var(--font-mono); font-size: 0.75rem; line-height: 1;
+  padding: 7px 9px; border-radius: 6px;
+  background: var(--petrol-soft); color: var(--ink);
+  border: 1px solid transparent; white-space: nowrap;
+}
+.chip[data-to="pii"] { background: var(--marker); color: var(--marker-ink); }
+.chip[data-to="dup"] { background: transparent; border-color: var(--line); color: var(--muted); text-decoration: line-through; }
+.sorter-foot {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  padding: 10px 16px; border-top: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
+}
+.sorter-foot strong { color: var(--petrol); font-weight: 500; }
+
+/* ---------- Slogan band ---------- */
+.band { background: var(--ink); color: var(--bg); }
+.band .wrap { padding-block: clamp(36px, 6vw, 64px); display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px 40px; }
+.band .slogan { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 7vw, 5.2rem); letter-spacing: -0.03em; line-height: 1; }
+.band .slogan .mark { color: var(--marker-ink); }
+.band p { max-width: 26rem; color: color-mix(in srgb, var(--bg) 78%, var(--ink)); }
+
+/* ---------- Sections ---------- */
+section.block { padding-block: clamp(56px, 8vw, 104px); border-bottom: 1px solid var(--line); }
+.section-head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 16px 48px; align-items: end; margin-bottom: clamp(32px, 5vw, 56px); }
+.section-head > * { min-width: 0; }
+.section-head h2 { font-size: var(--step-3); font-weight: 700; margin-top: 12px; }
+.section-head p { color: var(--muted); max-width: 38rem; }
+@media (max-width: 800px) { .section-head { grid-template-columns: 1fr; } }
+
+/* Why → What → Value */
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); }
+.flow > div { padding: 24px 28px 8px 0; min-width: 0; }
+.flow > div + div { padding-left: 28px; border-left: 1px solid var(--line); }
+.flow .q { font-family: var(--font-display); font-size: var(--step-2); font-weight: 700; display: flex; align-items: baseline; gap: 10px; }
+.flow .q .arrow { font-family: var(--font-mono); font-size: 1rem; color: var(--petrol); }
+.flow p { margin-top: 10px; color: var(--muted); max-width: 22rem; }
+.flow .ask { margin-top: 14px; font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink); background: var(--petrol-soft); padding: 8px 10px; border-radius: 6px; display: inline-block; }
+@media (max-width: 800px) {
+  .flow { grid-template-columns: 1fr; }
+  .flow > div, .flow > div + div { padding: 22px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+}
+
+/* Services ledger */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.service { padding: 28px 26px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; min-width: 0; background: var(--bg); transition: background .2s ease; }
+.service:hover { background: var(--surface); }
+.service .tag { font-family: var(--font-mono); font-size: 0.72rem; color: var(--petrol); letter-spacing: 0.08em; text-transform: uppercase; }
+.service h3 { font-size: 1.45rem; font-weight: 700; }
+.service p { color: var(--muted); }
+.service ul { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.service li { font-family: var(--font-mono); font-size: 0.72rem; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; color: var(--ink); }
+.service.featured { background: var(--petrol-soft); }
+@media (max-width: 960px) { .services { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .services { grid-template-columns: 1fr; } }
+
+/* Time back */
+.timeback { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.timeback > * { min-width: 0; }
+.timeback h2 { font-size: var(--step-3); font-weight: 700; margin-top: 12px; }
+.timeback .copy p { color: var(--muted); margin-top: 16px; max-width: 34rem; }
+.hours { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; }
+.hours h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.hours-row { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; padding: 12px 0; border-top: 1px solid var(--line); align-items: center; }
+.hours-row .task { font-weight: 500; }
+.hours-row .who { font-family: var(--font-mono); font-size: var(--step--1); padding: 4px 10px; border-radius: 999px; background: var(--petrol-soft); color: var(--petrol); }
+.hours-row .who.you { background: var(--marker); color: var(--marker-ink); }
+@media (max-width: 860px) { .timeback { grid-template-columns: 1fr; } }
+
+/* Why choose us */
+.reasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.reasons > div { border-top: 2px solid var(--ink); padding-top: 18px; min-width: 0; }
+.reasons h3 { font-size: 1.25rem; font-weight: 700; }
+.reasons p { color: var(--muted); margin-top: 8px; }
+@media (max-width: 900px) { .reasons { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .reasons { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact { padding-block: clamp(56px, 8vw, 104px); }
+.contact-card {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px 56px; align-items: center;
+  background: var(--ink); color: var(--bg); border-radius: 20px;
+  padding: clamp(28px, 5vw, 56px);
+}
+.contact-card > * { min-width: 0; }
+.contact-card .eyebrow { color: var(--marker); }
+.contact-card h2 { font-size: var(--step-3); font-weight: 800; margin-top: 12px; }
+.contact-card p { margin-top: 14px; color: color-mix(in srgb, var(--bg) 78%, var(--ink)); max-width: 32rem; }
+.contact-actions { display: flex; flex-direction: column; gap: 12px; }
+.email-box {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border: 1px solid color-mix(in srgb, var(--bg) 30%, var(--ink)); border-radius: 12px; padding: 12px 14px;
+}
+.email-box span { font-family: var(--font-mono); font-size: 0.95rem; user-select: all; overflow-wrap: anywhere; }
+.email-box button {
+  font: 500 var(--step--1) var(--font-mono); background: var(--marker); color: var(--marker-ink);
+  border: 0; border-radius: 999px; padding: 7px 14px; cursor: pointer; flex: none;
+}
+.contact-card .btn { background: var(--bg); color: var(--ink); border-color: var(--bg); justify-content: center; }
+@media (max-width: 820px) { .contact-card { grid-template-columns: 1fr; } }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: var(--step--1); color: var(--muted); }
+footer .mono { font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="DITech home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="8" fill="var(--ink)"></rect>
+        <rect x="7" y="8" width="18" height="3" rx="1.5" fill="var(--bg)"></rect>
+        <rect x="7" y="14.5" width="12" height="3" rx="1.5" fill="var(--bg)"></rect>
+        <rect x="7" y="21" width="7" height="3" rx="1.5" fill="var(--marker)"></rect>
+      </svg>
+      DITech
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why us</a>
+      <a class="btn" href="#contact">Let's talk</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Data Informatics and Technologies · Innovative Consulting</p>
+        <h1>Data and AI.<span class="line2">Now it <span class="mark">makes sense!</span></span></h1>
+        <p class="lede">We help organizations manage, store, protect and put AI to work on their data. Every engagement starts with one question: why? Knowing the purpose of your use case is how we make sure every solution adds real value.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">Start the conversation</a>
+          <a class="btn ghost" href="#services">See what we do</a>
+        </div>
+      </div>
+
+      <div class="sorter" aria-label="Illustration: unsorted files being classified into categories">
+        <div class="sorter-bar">
+          <span class="file">shared_drive/ → classify --by purpose</span>
+          <button type="button" id="replay">↻ Run again</button>
+        </div>
+        <div class="inbox" id="inbox">
+          <span class="chip" data-to="pii">customer_ssn.csv</span>
+          <span class="chip" data-to="biz">q3_sales.xlsx</span>
+          <span class="chip" data-to="dup">q3_sales (1).xlsx</span>
+          <span class="chip" data-to="arch">server_2019.log</span>
+          <span class="chip" data-to="biz">contract_v3.docx</span>
+          <span class="chip" data-to="pii">hr_payroll.db</span>
+          <span class="chip" data-to="arch">old_backup.tar</span>
+          <span class="chip" data-to="dup">contract_final_FINAL.docx</span>
+          <span class="chip" data-to="biz">pipeline.parquet</span>
+          <span class="chip" data-to="pii">patient_notes.pdf</span>
+        </div>
+        <div class="buckets">
+          <div class="bucket"><h3>Sensitive · PII <span class="count" data-count="pii">0</span></h3><div class="items" data-bucket="pii"></div></div>
+          <div class="bucket"><h3>Business value <span class="count" data-count="biz">0</span></h3><div class="items" data-bucket="biz"></div></div>
+          <div class="bucket"><h3>Archive · cold tier <span class="count" data-count="arch">0</span></h3><div class="items" data-bucket="arch"></div></div>
+          <div class="bucket"><h3>Duplicate · remove <span class="count" data-count="dup">0</span></h3><div class="items" data-bucket="dup"></div></div>
+        </div>
+        <div class="sorter-foot">
+          <span>status: <strong id="status">waiting</strong></span>
+          <span>backup policy: 3-2-1 · immutable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap">
+      <p class="slogan">No data, <span class="mark">no business.</span></p>
+      <p>Your data is your most valuable asset. We help you understand it, protect it and turn it into decisions.</p>
+    </div>
+  </div>
+
+  <section class="block" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Our approach</p>
+          <h2>Why we ask "why" first</h2>
+        </div>
+        <p>Understanding the purpose behind your data is the key to unlocking its full potential. We start with your goals, agree on what success looks like, then build the solution that gets you there.</p>
+      </div>
+      <div class="flow">
+        <div>
+          <p class="q">Why? <span class="arrow">→</span></p>
+          <p>We dig into the purpose behind the initiative, so the work lines up with your business objectives from day one.</p>
+          <span class="ask">"What problem are we solving?"</span>
+        </div>
+        <div>
+          <p class="q">What? <span class="arrow">→</span></p>
+          <p>We co-create the plan with your team: the use case, the data involved and the outcome you need.</p>
+          <span class="ask">"What does success look like?"</span>
+        </div>
+        <div>
+          <p class="q">Value.</p>
+          <p>We deliver solutions that are technically sound and measurable, with a clear return on your investment.</p>
+          <span class="ask">"How will we know it worked?"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What we offer</p>
+          <h2>Everything your data needs, end to end</h2>
+        </div>
+        <p>On-premises, in the cloud or both. We design, implement and run solutions that are tailored to how your organization actually works.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <span class="tag">Data management</span>
+          <h3>Organized, governed, usable</h3>
+          <p>Streamlined systems for efficient data handling, from governance to master data management.</p>
+          <ul><li>governance</li><li>MDM</li><li>data quality</li></ul>
+        </article>
+        <article class="service">
+          <span class="tag">Data storage</span>
+          <h3>Secure and scalable</h3>
+          <p>Storage designed to be resilient and optimized for performance, wherever your data lives.</p>
+          <ul><li>on-prem</li><li>cloud</li><li>hybrid</li><li>tiering</li></ul>
+        </article>
+        <article class="service">
+          <span class="tag">Artificial intelligence</span>
+          <h3>AI that drives decisions</h3>
+          <p>Predictive analytics, natural language processing and machine learning that turn data into actionable insight.</p>
+          <ul><li>predictive</li><li>NLP</li><li>ML</li></ul>
+        </article>
+        <article class="service">
+          <span class="tag">Backup &amp; cyber recovery</span>
+          <h3>Ready for the worst day</h3>
+          <p>Robust backup and disaster recovery strategies that safeguard critical information and keep the business running.</p>
+          <ul><li>RPO / RTO</li><li>immutable copies</li><li>ransomware recovery</li></ul>
+        </article>
+        <article class="service featured">
+          <span class="tag">Clean-up &amp; classification</span>
+          <h3>Find out what you really have</h3>
+          <p>We clean, de-duplicate and classify your data, so sensitive information is protected and valuable data is easy to find.</p>
+          <ul><li>de-dup</li><li>PII discovery</li><li>retention</li></ul>
+        </article>
+        <article class="service">
+          <span class="tag">Education &amp; enablement</span>
+          <h3>Use what you already own</h3>
+          <p>Many teams pay for capabilities they never switch on. We show you what exists and train your team to use it.</p>
+          <ul><li>workshops</li><li>capability reviews</li><li>roadmaps</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap timeback">
+      <div class="copy">
+        <p class="eyebrow">Your time back</p>
+        <h2>We take on the time-consuming work. You focus on bigger priorities.</h2>
+        <p>Data clean-up, classification and backup testing are essential and slow. Hand them to a team that does this every day, and keep your people on the work that moves the business forward.</p>
+      </div>
+      <div class="hours" aria-label="Who handles what">
+        <h3>Who handles what</h3>
+        <div class="hours-row"><span class="task">Data clean-up &amp; de-duplication</span><span class="who">DITech</span></div>
+        <div class="hours-row"><span class="task">Classification &amp; PII discovery</span><span class="who">DITech</span></div>
+        <div class="hours-row"><span class="task">Backup &amp; recovery testing</span><span class="who">DITech</span></div>
+        <div class="hours-row"><span class="task">Strategy, customers &amp; growth</span><span class="who you">You</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="why-us">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Why choose us</p>
+          <h2>A strategic partner, not just a provider</h2>
+        </div>
+        <p>Our team brings deep industry knowledge and explains complex ideas in plain language, so everyone involved stays aligned.</p>
+      </div>
+      <div class="reasons">
+        <div><h3>Purpose-driven</h3><p>We understand the why behind each use case, so the solution delivers maximum value.</p></div>
+        <div><h3>Collaborative</h3><p>We work hand in hand with your team to co-create strategies and share insights.</p></div>
+        <div><h3>Clear communication</h3><p>Transparent updates keep you informed and involved in every decision.</p></div>
+        <div><h3>Always innovating</h3><p>We keep exploring new technology and best practices to keep you ahead of the curve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <div>
+          <p class="eyebrow">Let's collaborate, communicate and innovate</p>
+          <h2>Turn your data into your most valuable asset.</h2>
+          <p>Tell us what you are trying to achieve. We will start by asking why, and show you what is possible.</p>
+        </div>
+        <div class="contact-actions">
+          <div class="email-box">
+            <span id="email">hello@example.com</span>
+            <button type="button" id="copy-email">Copy</button>
+          </div>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Data Informatics and Technologies (DITech)</span>
+    <span class="mono">Data and AI: Now it makes sense!</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var inbox = document.getElementById('inbox');
+  var status = document.getElementById('status');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var original = Array.prototype.slice.call(inbox.children);
+  var timers = [];
+
+  function counts() {
+    ['pii', 'biz', 'arch', 'dup'].forEach(function (k) {
+      document.querySelector('[data-count="' + k + '"]').textContent =
+        document.querySelector('[data-bucket="' + k + '"]').children.length;
+    });
+  }
+
+  function move(chip) {
+    var target = document.querySelector('[data-bucket="' + chip.dataset.to + '"]');
+    var first = chip.getBoundingClientRect();
+    target.appendChild(chip);
+    counts();
+    if (reduce || !chip.animate) return;
+    var last = chip.getBoundingClientRect();
+    chip.animate([
+      { transform: 'translate(' + (first.left - last.left) + 'px,' + (first.top - last.top) + 'px)' },
+      { transform: 'none' }
+    ], { duration: 520, easing: 'cubic-bezier(.2,.8,.2,1)' });
+  }
+
+  function run() {
+    timers.forEach(clearTimeout); timers = [];
+    original.forEach(function (c) { inbox.appendChild(c); });
+    counts();
+    status.textContent = 'classifying…';
+    original.forEach(function (chip, i) {
+      timers.push(setTimeout(function () { move(chip); }, (reduce ? 0 : 900) + i * (reduce ? 0 : 260)));
+    });
+    timers.push(setTimeout(function () {
+      status.textContent = '10 files · 3 sensitive · 2 duplicates removed';
+    }, (reduce ? 0 : 900) + original.length * (reduce ? 0 : 260) + 300));
+  }
+
+  document.getElementById('replay').addEventListener('click', run);
+  run();
+
+  var copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', function () {
+    var text = document.getElementById('email').textContent;
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copyBtn.textContent = 'Selected';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { copyBtn.textContent = 'Copied'; }, selectIt);
+    } catch (e) { selectIt(); }
+    setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1800);
+  });
+})();
+</script>
+</body>
+</html>
