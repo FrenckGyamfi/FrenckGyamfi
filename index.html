@@ -204,6 +204,18 @@ p { margin: 0; }
 .section-head p { color: var(--muted); font-size: 1.08rem; max-width: 30rem; }
 @media (max-width: 860px) { .section-head { grid-template-columns: 1fr; } }
 
+/* Challenges */
+.challenges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.challenge { display: flex; flex-direction: column; gap: 12px; padding: 26px; border: 1px solid var(--line); background: var(--panel); text-decoration: none; color: inherit; min-width: 0; transition: border-color .2s ease, transform .2s ease; }
+.challenge:hover { border-color: var(--signal); transform: translateY(-2px); }
+.challenge .tag { font: 500 0.72rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); }
+.challenge h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); letter-spacing: -0.025em; line-height: 1.12; }
+.challenge p { color: var(--muted); }
+.challenge .more { margin-top: auto; padding-top: 8px; font-weight: 500; font-size: 0.92rem; color: var(--signal); }
+@media (prefers-reduced-motion: reduce) { .challenge:hover { transform: none; } }
+@media (max-width: 960px) { .challenges { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .challenges { grid-template-columns: 1fr; } }
+
 /* Approach */
 .flow { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
 .flow > div { padding: 32px 32px 8px 0; min-width: 0; }
@@ -292,7 +304,9 @@ p { margin: 0; }
 @media (max-width: 600px) { .sectors { grid-template-columns: 1fr; } }
 
 /* Technology */
-.pillars { margin-top: 18px; font: 500 0.82rem var(--font-mono); color: var(--fg); letter-spacing: 0.02em; }
+.pillars { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 4px 0; font: 500 0.82rem var(--font-mono); color: var(--fg); letter-spacing: 0.02em; }
+.pillars span { white-space: nowrap; }
+.pillars span + span::before { content: "·"; color: var(--dim); margin: 0 8px; }
 .dev { display: inline-block; vertical-align: middle; font: 500 0.62rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal); border: 1px solid var(--signal); border-radius: 999px; padding: 3px 6px; margin-left: 4px; }
 .eco { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .eco-item { padding: 20px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-width: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
@@ -381,7 +395,7 @@ footer .mono { font-family: var(--font-mono); }
       <span>DataiTECH<small>DATA INFORMATICS &amp; TECHNOLOGIES</small></span>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#approach">Approach</a>
+      <a href="#challenges">Challenges</a>
       <a href="#services">Services</a>
       <a href="#sectors">Sectors</a>
       <a href="#technology">Technology</a>
@@ -395,7 +409,7 @@ footer .mono { font-family: var(--font-mono); }
   </div>
   <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
     <div class="rail">
-      <a href="#approach">Approach</a>
+      <a href="#challenges">Challenges</a>
       <a href="#services">Services</a>
       <a href="#sectors">Sectors</a>
       <a href="#technology">Technology</a>
@@ -410,7 +424,7 @@ footer .mono { font-family: var(--font-mono); }
 
   <section class="hero gutter">
     <div class="rail">
-      <p class="label"><span class="index">[00]</span> Enterprise infrastructure &amp; data consulting</p>
+      <p class="label"><span class="index">[00]</span> Infrastructure &amp; data protection specialists · Zoetermeer</p>
       <h1>Data and AI.<br><span class="soft">Now it</span> makes sense<span class="hl">.</span></h1>
 
       <figure class="field" style="margin-inline:0;margin-bottom:0" aria-label="Illustration: scattered data points settling into ordered, classified rows">
@@ -421,13 +435,13 @@ footer .mono { font-family: var(--font-mono); }
 
       <div class="hero-row">
         <div class="hero-copy">
-          <p><strong>DataiTECH designs, integrates and protects mission-critical enterprise infrastructure</strong>, and the data that runs on it. Every engagement starts with one question: why? Knowing the purpose of your use case is how we make sure every solution adds real value.</p>
-          <p class="pillars">Storage · Data Protection · Virtualisation · Hybrid Cloud · Cloud Native · Cyber Resilience</p>
+          <p><strong>Enterprise infrastructure, data protection and cyber recovery for regulated organisations in the Netherlands.</strong> We design, integrate and protect mission-critical infrastructure and the data that runs on it. Every engagement starts with one question: why?</p>
+          <p class="pillars"><span>Storage</span> <span>Data Protection</span> <span>Virtualisation</span> <span>Hybrid Cloud</span> <span>Cloud Native</span> <span>Cyber Resilience</span></p>
           <div class="hero-ctas">
-            <a class="pill solid" href="#contact">Start the conversation
+            <a class="pill solid" href="#contact">Request an assessment
               <span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M2 10 10 2M4 2h6v6"/></svg></span>
             </a>
-            <a class="pill" href="#approach">Our approach
+            <a class="pill" href="#challenges">Challenges we solve
               <span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M2 10 10 2M4 2h6v6"/></svg></span>
             </a>
           </div>
@@ -472,11 +486,63 @@ footer .mono { font-family: var(--font-mono); }
     </div>
   </div>
 
+  <section class="section gutter" id="challenges">
+    <div class="rail">
+      <div class="section-head">
+        <div>
+          <p class="label"><span class="index">[01]</span> Challenges we solve</p>
+          <h2>Recognise this<span class="hl">?</span></h2>
+        </div>
+        <p>The questions we hear from infrastructure managers, architects and CISOs. If one of them is on your agenda, we should talk.</p>
+      </div>
+      <div class="challenges">
+        <a class="challenge" href="#svc-backup">
+          <span class="tag">Backup &amp; cyber resilience</span>
+          <h3>Can you prove you can recover from ransomware?</h3>
+          <p>Auditors and boards now ask for evidence, not a backup policy. We design immutable, air-gapped copies and test the recovery, so you can show it works.</p>
+          <span class="more">How we help →</span>
+        </a>
+        <a class="challenge" href="#svc-backup">
+          <span class="tag">Compliance-driven resilience</span>
+          <h3>DORA, NIS2 or the BIO on your desk?</h3>
+          <p>Financial entities must comply with DORA since January 2025, NIS2 comes into Dutch law through the Cyberbeveiligingswet, and government works to the BIO. We turn those requirements into concrete resilience and recovery measures.</p>
+          <span class="more">How we help →</span>
+        </a>
+        <a class="challenge" href="#svc-virt">
+          <span class="tag">Virtualisation &amp; hybrid cloud</span>
+          <h3>VMware licensing forcing a rethink?</h3>
+          <p>Since the Broadcom acquisition many organisations face new VMware licensing and higher costs. We map your options: right-size, move to VMware Cloud Foundation, or shift workloads to Hyper-V or the cloud.</p>
+          <span class="more">How we help →</span>
+        </a>
+        <a class="challenge" href="#svc-storage">
+          <span class="tag">Storage &amp; infrastructure</span>
+          <h3>Storage at end of support, or simply full?</h3>
+          <p>Refresh, migrate or consolidate without disrupting the business, with capacity and performance sized on your real workload data.</p>
+          <span class="more">How we help →</span>
+        </a>
+        <a class="challenge" href="#svc-cleanup">
+          <span class="tag">Data, classification &amp; AI</span>
+          <h3>Do you know where your personal data lives?</h3>
+          <p>BSN numbers, HR files and medical records end up spread across shares and backups. We find, classify and protect them under the AVG (GDPR).</p>
+          <span class="more">How we help →</span>
+        </a>
+        <a class="challenge" href="#svc-k8s">
+          <span class="tag">Container &amp; Kubernetes storage</span>
+          <h3>Containers in production, but who protects the data?</h3>
+          <p>Persistent storage and backup for OpenShift and Kubernetes are often an afterthought. We make stateful containers as safe as the rest of your estate.</p>
+          <span class="more">How we help →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <section class="section gutter" id="approach">
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[01]</span> Our approach</p>
+          <p class="label"><span class="index">[02]</span> Our approach</p>
           <h2>We ask why<span class="hl">.</span></h2>
         </div>
         <p>Understanding the purpose behind your data is the key to unlocking its full potential. We start with your goals, agree on what success looks like, then build the solution that gets you there.</p>
@@ -507,10 +573,10 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[02]</span> What we do</p>
+          <p class="label"><span class="index">[03]</span> What we do</p>
           <h2>Services<span class="hl">.</span></h2>
         </div>
-        <p>Six service pillars, from the storage layer up to the data that runs on it. On-premises, in the cloud or both, and always integrated into one working whole.</p>
+        <p>Six service pillars, from the storage layer up to the data that runs on it. On-premises, in the cloud or both, integrated into one working whole and documented so your team can run it.</p>
       </div>
 
       <div class="services">
@@ -518,7 +584,7 @@ footer .mono { font-family: var(--font-mono); }
           <li><a href="#svc-storage" class="active">Storage &amp; Infrastructure</a></li>
           <li><a href="#svc-backup">Backup &amp; Cyber Resilience</a></li>
           <li><a href="#svc-virt">Virtualisation &amp; Hybrid Cloud</a></li>
-          <li><a href="#svc-k8s">Cloud-Native &amp; Kubernetes</a></li>
+          <li><a href="#svc-k8s">Container &amp; Kubernetes Storage</a></li>
           <li><a href="#svc-cleanup">Data, Classification &amp; AI</a></li>
           <li><a href="#svc-management">Architecture &amp; Consultancy</a></li>
         </ul>
@@ -574,10 +640,10 @@ footer .mono { font-family: var(--font-mono); }
 <ellipse class="f" cx="97" cy="128" rx="44" ry="10"/><path class="s" d="M53 128v18c0 6 20 10 44 10s44-4 44-10v-18"/><ellipse class="s" cx="97" cy="128" rx="44" ry="10"/>
 <path class="s" d="M168 56h46v30h-46zM168 96h46v30h-46z"/><path class="y" d="M176 66h30M176 106h22"/><path class="g" style="stroke-opacity:.45" stroke-dasharray="4 5" d="M141 140h44v-14"/></svg></div>
             <div>
-              <h3>Cloud-Native &amp; Kubernetes Infrastructure</h3>
-              <p>The infrastructure underneath containers: persistent storage, data protection and platforms your developers can rely on.</p>
+              <h3>Container &amp; Kubernetes Storage</h3>
+              <p>Persistent storage and data protection for containers, so stateful applications on OpenShift and Kubernetes are as safe as the rest of your estate.</p>
               <p class="cats">Platforms &amp; capabilities</p>
-              <ul><li>Kubernetes <span class="dev" title="Developing expertise">Developing</span></li><li>SUSE Rancher <span class="dev" title="Developing expertise">Developing</span></li><li>Red Hat OpenShift</li><li>Docker / containers</li><li>Persistent storage &amp; CSI</li><li>S3 object storage integration</li></ul>
+              <ul><li>Red Hat OpenShift</li><li>Persistent storage &amp; CSI</li><li>S3 object storage integration</li><li>Data protection for containers</li><li>Docker / containers</li><li>Kubernetes &amp; SUSE Rancher (growing practice)</li></ul>
             </div>
           </article>
           <article class="svc" id="svc-cleanup">
@@ -620,13 +686,13 @@ footer .mono { font-family: var(--font-mono); }
 
   <section class="statement gutter">
     <div class="rail">
-      <p class="label" style="justify-content:center"><span class="index">[03]</span> Your time back</p>
+      <p class="label" style="justify-content:center"><span class="index">[04]</span> Your time back</p>
       <p class="big">We take on the time-consuming work, <span class="soft">so you can focus on bigger priorities.</span></p>
       <div class="handoff" aria-label="Who handles what">
         <div><span class="who">DataiTECH</span><p class="task">Data clean-up &amp; de-duplication</p></div>
         <div><span class="who">DataiTECH</span><p class="task">Classification &amp; PII discovery</p></div>
         <div><span class="who">DataiTECH</span><p class="task">Backup &amp; recovery testing</p></div>
-        <div><span class="who">You</span><p class="task">Strategy, customers &amp; growth</p></div>
+        <div><span class="who">Your team</span><p class="task">Strategy, policy &amp; priorities</p></div>
       </div>
     </div>
   </section>
@@ -637,14 +703,14 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[04]</span> Sectors we serve</p>
+          <p class="label"><span class="index">[05]</span> Sectors we serve</p>
           <h2>Built for regulated data<span class="hl">.</span></h2>
         </div>
         <p>We work where data is critical, sensitive and regulated: from central banking and national government to defence, universities and the infrastructure the Netherlands runs on.</p>
       </div>
       <div class="sectors">
         <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path class="s" d="M6 16h28L20 7zM9 16v14M15 16v14M25 16v14M31 16v14M5 33h30"/><path class="y" d="M17 23h6"/></svg><h3>Banking &amp; financial services</h3><p>Central banking, retail and corporate banking, where data integrity, auditability and recovery time are regulated.</p></article>
-        <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path class="s" d="M8 34V14l12-7 12 7v20M5 34h30M14 34V22h12v12"/><path class="y" d="M20 12v4"/></svg><h3>Central government &amp; public sector</h3><p>Ministries, executive agencies and shared-service organizations that manage citizen data at national scale.</p></article>
+        <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path class="s" d="M8 34V14l12-7 12 7v20M5 34h30M14 34V22h12v12"/><path class="y" d="M20 12v4"/></svg><h3>Central government &amp; public sector</h3><p>Ministries, executive agencies and shared-service organisations that manage citizen data at national scale.</p></article>
         <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path class="s" d="M20 5l12 5v9c0 8-5 13-12 16-7-3-12-8-12-16v-9z"/><path class="y" d="M15 20l4 4 7-8"/></svg><h3>Defence, police &amp; security</h3><p>Classified and mission-critical environments where availability, segregation and chain of custody come first.</p></article>
         <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path class="s" d="M4 15l16-8 16 8-16 8zM10 18v8c3 3 7 4 10 4s7-1 10-4v-8M36 15v10"/><path class="y" d="M36 25v3"/></svg><h3>Universities &amp; research</h3><p>Research data at petabyte scale, long-term retention and open-science requirements across faculties.</p></article>
         <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><circle class="s" cx="20" cy="20" r="6"/><path class="s" d="M20 5v5M20 30v5M5 20h5M30 20h5M9 9l4 4M27 27l4 4M31 9l-4 4M13 27l-4 4"/><circle class="y" cx="20" cy="20" r="2"/></svg><h3>High-tech &amp; critical infrastructure</h3><p>Engineering, manufacturing and airport operations where downtime stops the business.</p></article>
@@ -659,31 +725,31 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[05]</span> Technology</p>
+          <p class="label"><span class="index">[06]</span> Technology</p>
           <h2>One integrated ecosystem<span class="hl">.</span></h2>
         </div>
         <p>We don't sell a list of products. Our value is integrating these platforms into complete, protected enterprise infrastructure, and knowing which one fits your use case.</p>
       </div>
       <div class="eco" aria-label="Core technology ecosystem">
-        <div class="eco-item"><b>NetApp</b><span>Storage &amp; data management</span></div>
+        <div class="eco-item"><b>NetApp</b><span>ONTAP, MetroCluster &amp; StorageGRID</span></div>
         <div class="eco-item"><b>Dell Technologies</b><span>PowerMax, PowerScale &amp; PowerProtect</span></div>
         <div class="eco-item"><b>Commvault</b><span>Backup &amp; recovery</span></div>
-        <div class="eco-item"><b>VMware</b><span>Virtualisation &amp; SDDC</span></div>
-        <div class="eco-item"><b>Microsoft Azure</b><span>Cloud &amp; hybrid cloud</span></div>
+        <div class="eco-item"><b>Rubrik</b><span>Security Cloud &amp; cyber recovery</span></div>
+        <div class="eco-item"><b>Veeam</b><span>Backup &amp; replication</span></div>
+        <div class="eco-item"><b>VMware</b><span>vSphere, vSAN &amp; Cloud Foundation</span></div>
+        <div class="eco-item"><b>Microsoft</b><span>Azure, Hyper-V &amp; Windows Server</span></div>
         <div class="eco-item"><b>AWS</b><span>Cloud infrastructure</span></div>
-        <div class="eco-item"><b>Kubernetes</b><span>Container platforms</span><span class="dev" title="Developing expertise">Developing</span></div>
-        <div class="eco-item"><b>SUSE Rancher</b><span>Container management</span><span class="dev" title="Developing expertise">Developing</span></div>
-        <div class="eco-item"><b>Cisco &amp; Brocade</b><span>Networking &amp; SAN</span></div>
-        <div class="eco-item"><b>F5 &amp; Infoblox</b><span>Application delivery &amp; DNS/IPAM</span><span class="dev" title="Developing expertise">Developing</span></div>
+        <div class="eco-item"><b>Red Hat</b><span>RHEL &amp; OpenShift</span></div>
+        <div class="eco-item"><b>Cisco &amp; Brocade</b><span>Networking &amp; Fibre Channel SAN</span></div>
       </div>
-      <p class="dev-note"><span class="dev" title="Developing expertise">Developing</span> We are actively building hands-on experience with these technologies, and say so openly.</p>
+      <p class="dev-note"><span class="dev">Growing</span> A growing part of our practice: we are open about where we are still building depth.</p>
       <div class="tgroups">
         <div class="tgroup"><span class="n">01</span><h3>Enterprise storage &amp; data management</h3><ul><li>NetApp ONTAP (AFF, FAS, ASA, C-Series)</li><li>NetApp MetroCluster</li><li>NetApp StorageGRID</li><li>Dell PowerMax</li><li>Dell PowerScale (Isilon)</li><li>Dell PowerStore</li><li>Dell Unity</li><li>HPE enterprise storage</li></ul></div>
         <div class="tgroup"><span class="n">02</span><h3>Backup, recovery &amp; cyber resilience</h3><ul><li>Commvault</li><li>Rubrik Security Cloud (RSC)</li><li>Rubrik CDM</li><li>Veeam Backup &amp; Replication</li><li>Dell PowerProtect</li><li>Dell CyberSense</li><li>Oracle ZDLRA</li><li>Air-gapped &amp; immutable storage</li><li>Disaster &amp; cyber recovery</li></ul></div>
         <div class="tgroup"><span class="n">03</span><h3>Virtualisation &amp; software-defined infrastructure</h3><ul><li>VMware vSphere / ESXi</li><li>VMware vCenter</li><li>VMware vSAN</li><li>VMware Cloud Foundation</li><li>Dell VxRail</li><li>Microsoft Hyper-V</li><li>Software-defined data centre (SDDC)</li></ul></div>
         <div class="tgroup"><span class="n">04</span><h3>Cloud &amp; hybrid cloud</h3><ul><li>Microsoft Azure</li><li>AWS</li><li>Hybrid cloud architecture</li><li>Cloud infrastructure design</li><li>Cloud storage &amp; data management</li><li>Cloud migration &amp; modernisation</li><li>Enterprise cloud integration</li></ul></div>
-        <div class="tgroup"><span class="n">05</span><h3>Kubernetes &amp; cloud-native</h3><ul><li>Kubernetes <span class="dev" title="Developing expertise">Developing</span></li><li>SUSE Rancher <span class="dev" title="Developing expertise">Developing</span></li><li>Red Hat OpenShift</li><li>Docker / containers</li><li>Persistent storage for Kubernetes</li><li>Container Storage Interface (CSI)</li><li>S3 object storage integration</li></ul></div>
-        <div class="tgroup"><span class="n">06</span><h3>Networking, SAN &amp; connectivity</h3><ul><li>Cisco networking</li><li>Fibre Channel SAN</li><li>Brocade SAN switching</li><li>F5 BIG-IP load balancers <span class="dev" title="Developing expertise">Developing</span></li><li>Infoblox DNS, DHCP &amp; IPAM <span class="dev" title="Developing expertise">Developing</span></li><li>Kong API Gateway</li><li>iSCSI &amp; Ethernet</li><li>Multipathing &amp; redundancy</li></ul></div>
+        <div class="tgroup"><span class="n">05</span><h3>Kubernetes &amp; cloud-native</h3><ul><li>Kubernetes <span class="dev" title="A growing part of our practice">Growing</span></li><li>SUSE Rancher <span class="dev" title="A growing part of our practice">Growing</span></li><li>Red Hat OpenShift</li><li>Docker / containers</li><li>Persistent storage for Kubernetes</li><li>Container Storage Interface (CSI)</li><li>S3 object storage integration</li></ul></div>
+        <div class="tgroup"><span class="n">06</span><h3>Networking, SAN &amp; connectivity</h3><ul><li>Cisco networking</li><li>Fibre Channel SAN</li><li>Brocade SAN switching</li><li>F5 BIG-IP load balancers <span class="dev" title="A growing part of our practice">Growing</span></li><li>Infoblox DNS, DHCP &amp; IPAM <span class="dev" title="A growing part of our practice">Growing</span></li><li>Kong API Gateway</li><li>iSCSI &amp; Ethernet</li><li>Multipathing &amp; redundancy</li></ul></div>
         <div class="tgroup"><span class="n">07</span><h3>Operating systems &amp; platforms</h3><ul><li>Red Hat Enterprise Linux (RHEL)</li><li>SUSE Linux Enterprise Server (SLES)</li><li>Microsoft Windows Server</li><li>Linux system administration</li><li>Infrastructure automation</li></ul></div>
         <div class="tgroup"><span class="n">08</span><h3>Security, governance &amp; compliance</h3><ul><li>Data classification</li><li>Encryption at rest &amp; in transit</li><li>Identity &amp; access management (IAM)</li><li>Zero Trust architecture</li><li>Immutable backup</li><li>Ransomware protection</li><li>Business continuity &amp; DR planning</li><li>Data retention &amp; governance</li></ul></div>
         <div class="tgroup"><span class="n">09</span><h3>Architecture, design &amp; automation</h3><ul><li>Enterprise infrastructure architecture</li><li>Technical solutions design</li><li>Capacity planning &amp; workload sizing</li><li>High availability</li><li>HLD / LLD documentation</li><li>Monitoring &amp; observability</li><li>Infrastructure as Code (IaC)</li></ul></div>
@@ -697,16 +763,16 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[06]</span> Why choose us</p>
-          <h2>A partner, not a provider<span class="hl">.</span></h2>
+          <p class="label"><span class="index">[07]</span> What to expect</p>
+          <h2>No surprises<span class="hl">.</span></h2>
         </div>
-        <p>Our team brings deep industry knowledge and explains complex ideas in plain language, so everyone involved stays aligned.</p>
+        <p>What you can count on, from the first conversation to the handover.</p>
       </div>
       <div class="reasons">
-        <div><span class="index">→ Purpose</span><h3>Purpose-driven</h3><p>We understand the why behind each use case, so the solution delivers maximum value.</p></div>
-        <div><span class="index">→ Together</span><h3>Collaborative</h3><p>We work hand in hand with your team to co-create strategies and share insights.</p></div>
-        <div><span class="index">→ Clarity</span><h3>Clear communication</h3><p>Transparent updates keep you informed and involved in every decision.</p></div>
-        <div><span class="index">→ Ahead</span><h3>Always innovating</h3><p>We keep exploring new technology and best practices to keep you ahead of the curve.</p></div>
+        <div><span class="index">→ Purpose</span><h3>The why comes first</h3><p>We agree on the purpose and on measurable outcomes before we design anything.</p></div>
+        <div><span class="index">→ Clarity</span><h3>Plain language</h3><p>Clear explanations and regular updates for architects, managers and procurement alike.</p></div>
+        <div><span class="index">→ Ownership</span><h3>Documented &amp; transferable</h3><p>HLD/LLD documentation and knowledge transfer, so your team can run what we build.</p></div>
+        <div><span class="index">→ Evidence</span><h3>Tested, not assumed</h3><p>We prove that failover and recovery work, and give you the evidence for your auditors.</p></div>
       </div>
     </div>
   </section>
@@ -717,30 +783,30 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[07]</span> How we work</p>
+          <p class="label"><span class="index">[08]</span> How we work</p>
           <h2>Three ways to start<span class="hl">.</span></h2>
         </div>
-        <p>Most clients begin with an assessment, then decide whether to have us deliver the work, support it afterwards, or both. Every step starts with the why.</p>
+        <p>Most clients begin with an assessment, then decide whether we deliver the work, support it afterwards, or both. You only commit to the next step once you have seen the previous one.</p>
       </div>
       <div class="steps">
         <article class="step">
           <span class="n">Step 1</span>
           <h3>Assessment</h3>
-          <p>A short, fixed-scope review of your data landscape.</p>
-          <ul><li>What data you have and where it lives</li><li>Risks: sensitive data, duplicates, recovery gaps</li><li>Capabilities you already own but don't use</li></ul>
-          <p class="out"><b>You get:</b> a clear report and a prioritized plan.</p>
+          <p>A short, fixed-scope review of your infrastructure and data protection.</p>
+          <ul><li>Your storage, backup and virtualisation estate</li><li>Risks: recovery gaps, end-of-support, sensitive data</li><li>Capabilities you already own but don't use</li></ul>
+          <p class="out"><b>You get:</b> a clear report and a prioritised plan.</p>
         </article>
         <article class="step">
           <span class="n">Step 2</span>
           <h3>Project delivery</h3>
           <p>We design and implement the solution with your team.</p>
-          <ul><li>Storage, backup and recovery design</li><li>Clean-up, classification and migration</li><li>AI use cases built on clean data</li></ul>
+          <ul><li>Storage, backup and cyber recovery design</li><li>Virtualisation, cloud and migration</li><li>Data clean-up and classification</li></ul>
           <p class="out"><b>You get:</b> a working solution and a team that knows how to run it.</p>
         </article>
         <article class="step">
           <span class="n">Step 3</span>
           <h3>Ongoing support</h3>
-          <p>We stay on as your data partner after go-live.</p>
+          <p>We stay on as your infrastructure partner after go-live.</p>
           <ul><li>Regular recovery testing</li><li>Health checks and capacity planning</li><li>Training as your platforms change</li></ul>
           <p class="out"><b>You get:</b> confidence that it keeps working.</p>
         </article>
@@ -754,7 +820,7 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[08]</span> Questions</p>
+          <p class="label"><span class="index">[09]</span> Questions</p>
           <h2>FAQ<span class="hl">.</span></h2>
         </div>
         <p>Short answers to the questions we hear most. Something missing? Email us and we'll answer it.</p>
@@ -773,8 +839,12 @@ footer .mono { font-family: var(--font-mono); }
           <div class="a"><p>Keep at least 3 copies of your data, on 2 different types of storage, with 1 copy off-site. Modern cyber recovery adds an immutable copy that cannot be changed or deleted, so you can still recover after a ransomware attack.</p></div>
         </details>
         <details>
-          <summary>Do you work with regulated and government organizations?</summary>
-          <div class="a"><p>Yes. Our focus is on sectors with strict requirements: banking, central government, defence and police, universities and critical infrastructure. We work within your security policies and your obligations under the AVG (GDPR) and NIS2.</p></div>
+          <summary>Do you work with regulated and government organisations?</summary>
+          <div class="a"><p>Yes. Our focus is on sectors with strict requirements: banking, central government, defence and police, universities and critical infrastructure. We work within your security policies and your obligations under the AVG (GDPR), NIS2, DORA and the BIO.</p></div>
+        </details>
+        <details>
+          <summary>Can you help with the VMware licensing changes?</summary>
+          <div class="a"><p>Yes. We start with what you actually run and what it costs today, then compare the realistic options: right-sizing your VMware estate, moving to VMware Cloud Foundation, or shifting workloads to Microsoft Hyper-V or the cloud. You get a recommendation based on cost, risk and timing, not on a vendor's preference.</p></div>
         </details>
         <details>
           <summary>Do you work on-premises, in the cloud or both?</summary>
@@ -782,7 +852,7 @@ footer .mono { font-family: var(--font-mono); }
         </details>
         <details>
           <summary>Which platforms do you work with?</summary>
-          <div class="a"><p>Our core ecosystem includes NetApp, Dell Technologies, Commvault, Rubrik, Veeam, VMware, Microsoft Azure and AWS, plus Cisco and Brocade for networking and SAN. The full list is in the <a href="#technology">Technology</a> section above.</p><p>We are open about where we are still building experience, such as Kubernetes, SUSE Rancher, F5 and Infoblox. We also help you get more out of the platforms you already own.</p></div>
+          <div class="a"><p>Our core ecosystem is NetApp, Dell Technologies, Commvault, Rubrik, Veeam, VMware, Microsoft, AWS and Red Hat, with Cisco and Brocade for networking and SAN. The full list is in the <a href="#technology">Technology</a> section.</p><p>Kubernetes, SUSE Rancher, F5 and Infoblox are a growing part of our practice. We also help you get more out of the platforms you already own.</p></div>
         </details>
         <details>
           <summary>How do we get started?</summary>
@@ -796,10 +866,10 @@ footer .mono { font-family: var(--font-mono); }
 
   <section class="contact gutter" id="contact">
     <div class="rail">
-      <p class="label"><span class="index">[09]</span> Let's collaborate, communicate and innovate</p>
+      <p class="label"><span class="index">[10]</span> Let's collaborate, communicate and innovate</p>
       <h2>Let's talk<span class="hl">.</span></h2>
       <div class="contact-row">
-        <p>Tell us what you are trying to achieve. We will start by asking why, and show you how to turn your data into your most valuable asset.</p>
+        <p>Tell us about your environment, the challenge and your timeline. We will start by asking why, and come back with a clear first step.</p>
         <div class="contact-actions">
           <div class="email-box">
             <a id="email" href="mailto:enquiries@dataitechbv.com">enquiries@dataitechbv.com</a>
