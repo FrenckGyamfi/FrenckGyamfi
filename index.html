@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DataiTECH · Data and AI: Now it makes sense!</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="DataiTECH helps Dutch organizations manage, store, protect and use their data: data management, storage, AI, backup and cyber recovery, clean-up and classification. Based in Zoetermeer.">
+<meta name="description" content="DataiTECH designs, integrates and protects mission-critical enterprise infrastructure: storage, backup and cyber resilience, virtualisation, hybrid cloud, Kubernetes and data classification. Based in Zoetermeer.">
 <link rel="canonical" href="https://www.dataitechbv.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#060606">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DataiTECH">
 <meta property="og:title" content="DataiTECH · Data and AI: Now it makes sense!">
-<meta property="og:description" content="DataiTECH helps Dutch organizations manage, store, protect and use their data: data management, storage, AI, backup and cyber recovery, clean-up and classification. Based in Zoetermeer.">
+<meta property="og:description" content="DataiTECH designs, integrates and protects mission-critical enterprise infrastructure: storage, backup and cyber resilience, virtualisation, hybrid cloud, Kubernetes and data classification. Based in Zoetermeer.">
 <meta property="og:url" content="https://www.dataitechbv.com/">
 <meta property="og:image" content="https://www.dataitechbv.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
  "url": "https://www.dataitechbv.com/",
  "email": "enquiries@dataitechbv.com",
  "slogan": "Data and AI: Now it makes sense!",
- "description": "DataiTECH helps Dutch organizations manage, store, protect and use their data: data management, storage, AI, backup and cyber recovery, clean-up and classification. Based in Zoetermeer.",
+ "description": "DataiTECH designs, integrates and protects mission-critical enterprise infrastructure: storage, backup and cyber resilience, virtualisation, hybrid cloud, Kubernetes and data classification. Based in Zoetermeer.",
  "vatID": "NL854655475B02",
  "identifier": {
   "@type": "PropertyValue",
@@ -41,17 +41,7 @@
   "addressCountry": "NL"
  },
  "areaServed": "NL",
- "knowsAbout": [
-  "Data management",
-  "Data storage",
-  "Artificial intelligence",
-  "Backup and cyber recovery",
-  "Data classification",
-  "VMware",
-  "NetApp MetroCluster",
-  "Commvault",
-  "Dell storage"
- ]
+ "knowsAbout": ["Enterprise storage", "Backup and cyber recovery", "Virtualisation", "Hybrid cloud", "Kubernetes", "Data classification", "Infrastructure architecture", "NetApp", "Dell Technologies", "Commvault", "Rubrik", "Veeam", "VMware", "Microsoft Azure", "AWS"]
 }
 </script>
 <!--FONTS-->
@@ -138,7 +128,7 @@ p { margin: 0; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.02em; }
 .brand-mark { width: 30px; height: 30px; flex: none; }
 .brand small { display: block; font: 400 0.68rem var(--font-mono); letter-spacing: 0.06em; color: var(--dim); margin-top: 2px; }
-.nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.92rem; }
+.nav-links { display: flex; align-items: center; gap: 24px; font-size: 0.92rem; }
 .nav-links a:not(.pill) { text-decoration: none; color: var(--muted); }
 .nav-links a:not(.pill):hover { color: var(--fg); }
 .nav-links .pill { padding: 5px 5px 5px 16px; font-size: 0.88rem; }
@@ -150,7 +140,7 @@ p { margin: 0; }
 .site-header.open .menu-btn .bars::before { top: 4px; transform: rotate(45deg); }
 .site-header.open .menu-btn .bars::after { top: 4px; transform: rotate(-45deg); }
 .mobile-panel { display: none; }
-@media (max-width: 920px) {
+@media (max-width: 1040px) {
   .nav-links { display: none; }
   .menu-btn { display: inline-flex; }
   .brand small { display: none; }
@@ -256,6 +246,7 @@ p { margin: 0; }
 .svc p { color: var(--muted); margin-top: 12px; }
 .svc .cats { margin-top: 22px; font-size: 0.8rem; color: var(--dim); }
 .svc ul { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.svc li .dev { margin-left: 6px; }
 .svc li { font-size: 0.78rem; border: 1px solid #343434; padding: 6px 10px; color: var(--fg); }
 @media (max-width: 960px) { .services { grid-template-columns: 1fr; } .svc-index { display: none; } }
 @media (max-width: 620px) { .svc { grid-template-columns: 1fr; gap: 8px; } .svc .art { max-width: 200px; margin-bottom: 8px; } }
@@ -299,6 +290,35 @@ p { margin: 0; }
 .platforms span.p { font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; }
 @media (max-width: 960px) { .sectors { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .sectors { grid-template-columns: 1fr; } }
+
+/* Technology */
+.pillars { margin-top: 18px; font: 500 0.82rem var(--font-mono); color: var(--fg); letter-spacing: 0.02em; }
+.dev { display: inline-block; vertical-align: middle; font: 500 0.62rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal); border: 1px solid var(--signal); border-radius: 999px; padding: 3px 6px; margin-left: 4px; }
+.eco { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.eco-item { padding: 20px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-width: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.eco-item b { font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; letter-spacing: -0.02em; }
+.eco-item span:not(.dev) { color: var(--muted); font-size: 0.86rem; }
+.eco-item .dev { margin: 6px 0 0; }
+.dev-note { margin-top: 16px; color: var(--muted); font-size: 0.88rem; }
+.dev-note .dev { margin: 0 6px 0 0; }
+.tgroups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: clamp(32px, 5vw, 56px); border-top: 1px solid var(--line); }
+.tgroup { padding: 24px 24px 28px 0; min-width: 0; border-bottom: 1px solid var(--line); }
+.tgroup:not(:nth-child(3n+1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+.tgroup .n { font: 500 0.75rem var(--font-mono); color: var(--dim); }
+.tgroup h3 { font-size: 1.15rem; letter-spacing: -0.02em; margin: 8px 0 12px; }
+.tgroup ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.tgroup li { color: var(--muted); font-size: 0.92rem; padding-left: 14px; position: relative; }
+.tgroup li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 1px; background: var(--dim); }
+@media (max-width: 1000px) { .eco { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+  .tgroups { grid-template-columns: 1fr 1fr; }
+  .tgroup, .tgroup:not(:nth-child(3n+1)) { padding: 22px 20px 24px 0; border-left: 0; }
+  .tgroup:nth-child(2n) { padding-left: 20px; border-left: 1px solid var(--line); }
+}
+@media (max-width: 560px) {
+  .tgroups { grid-template-columns: 1fr; }
+  .tgroup:nth-child(2n) { padding-left: 0; border-left: 0; }
+}
 
 /* How we work */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
@@ -364,6 +384,7 @@ footer .mono { font-family: var(--font-mono); }
       <a href="#approach">Approach</a>
       <a href="#services">Services</a>
       <a href="#sectors">Sectors</a>
+      <a href="#technology">Technology</a>
       <a href="#how-we-work">How we work</a>
       <a href="#faq">FAQ</a>
       <a class="pill" href="#contact">Contact
@@ -377,6 +398,7 @@ footer .mono { font-family: var(--font-mono); }
       <a href="#approach">Approach</a>
       <a href="#services">Services</a>
       <a href="#sectors">Sectors</a>
+      <a href="#technology">Technology</a>
       <a href="#how-we-work">How we work</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -388,7 +410,7 @@ footer .mono { font-family: var(--font-mono); }
 
   <section class="hero gutter">
     <div class="rail">
-      <p class="label"><span class="index">[00]</span> Innovative data consulting</p>
+      <p class="label"><span class="index">[00]</span> Enterprise infrastructure &amp; data consulting</p>
       <h1>Data and AI.<br><span class="soft">Now it</span> makes sense<span class="hl">.</span></h1>
 
       <figure class="field" style="margin-inline:0;margin-bottom:0" aria-label="Illustration: scattered data points settling into ordered, classified rows">
@@ -399,7 +421,8 @@ footer .mono { font-family: var(--font-mono); }
 
       <div class="hero-row">
         <div class="hero-copy">
-          <p><strong>Data Informatics and Technologies</strong> helps organizations manage, store, protect and put AI to work on their data. Every engagement starts with one question: why? Knowing the purpose of your use case is how we make sure every solution adds real value.</p>
+          <p><strong>DataiTECH designs, integrates and protects mission-critical enterprise infrastructure</strong>, and the data that runs on it. Every engagement starts with one question: why? Knowing the purpose of your use case is how we make sure every solution adds real value.</p>
+          <p class="pillars">Storage · Data Protection · Virtualisation · Hybrid Cloud · Cloud Native · Cyber Resilience</p>
           <div class="hero-ctas">
             <a class="pill solid" href="#contact">Start the conversation
               <span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M2 10 10 2M4 2h6v6"/></svg></span>
@@ -487,62 +510,36 @@ footer .mono { font-family: var(--font-mono); }
           <p class="label"><span class="index">[02]</span> What we do</p>
           <h2>Services<span class="hl">.</span></h2>
         </div>
-        <p>On-premises, in the cloud or both. Each capability is tailored to how your organization actually works, and grounded in real-world delivery.</p>
+        <p>Six service pillars, from the storage layer up to the data that runs on it. On-premises, in the cloud or both, and always integrated into one working whole.</p>
       </div>
 
       <div class="services">
         <ul class="svc-index" id="svc-index">
-          <li><a href="#svc-management" class="active">Data Management</a></li>
-          <li><a href="#svc-storage">Data Storage</a></li>
-          <li><a href="#svc-ai">Artificial Intelligence</a></li>
-          <li><a href="#svc-backup">Backup &amp; Cyber Recovery</a></li>
-          <li><a href="#svc-cleanup">Clean-up &amp; Classification</a></li>
-          <li><a href="#svc-education">Education &amp; Enablement</a></li>
+          <li><a href="#svc-storage" class="active">Storage &amp; Infrastructure</a></li>
+          <li><a href="#svc-backup">Backup &amp; Cyber Resilience</a></li>
+          <li><a href="#svc-virt">Virtualisation &amp; Hybrid Cloud</a></li>
+          <li><a href="#svc-k8s">Cloud-Native &amp; Kubernetes</a></li>
+          <li><a href="#svc-cleanup">Data, Classification &amp; AI</a></li>
+          <li><a href="#svc-management">Architecture &amp; Consultancy</a></li>
         </ul>
 
         <div class="svc-cards">
-          <article class="svc" id="svc-management">
-            <div><span class="num">01 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/>
-<rect class="f" x="92" y="18" width="56" height="30" rx="4"/><rect class="y" x="92" y="18" width="56" height="30" rx="4"/>
-<path class="yf" d="M104 30h32v3h-32zM104 37h20v3h-20z"/>
-<path class="s" d="M120 48v18M48 66h144M48 66v18M120 66v18M192 66v18"/>
-<rect class="s" x="20" y="84" width="56" height="70" rx="4"/><rect class="s" x="92" y="84" width="56" height="70" rx="4"/><rect class="s" x="164" y="84" width="56" height="70" rx="4"/>
-<path class="s" d="M30 98h36M30 110h28M30 122h36M30 134h20M102 98h36M102 110h22M102 122h36M102 134h30M174 98h36M174 110h30M174 122h18M174 134h36"/>
-<circle class="yf" cx="66" cy="110" r="3"/><circle class="yf" cx="138" cy="134" r="3"/></svg></div>
-            <div>
-              <h3>Data Management</h3>
-              <p>Streamlined systems for efficient data handling. We set up the frameworks to organize, secure and use your data well.</p>
-              <p class="cats">Capabilities</p>
-              <ul><li>Data Governance</li><li>Master Data Management</li><li>Data Quality</li><li>Data Catalog</li><li>Lifecycle Policies</li></ul>
-            </div>
-          </article>
           <article class="svc" id="svc-storage">
-            <div><span class="num">02 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/>
+            <div><span class="num">01 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/>
 <g><ellipse class="f" cx="120" cy="132" rx="70" ry="18"/><path class="s" d="M50 132v14c0 10 31 18 70 18s70-8 70-18v-14"/><ellipse class="s" cx="120" cy="132" rx="70" ry="18"/></g>
 <g><path class="s" d="M50 94v14c0 10 31 18 70 18s70-8 70-18V94"/><ellipse class="s" cx="120" cy="94" rx="70" ry="18"/></g>
 <g><path class="y" d="M50 56v14c0 10 31 18 70 18s70-8 70-18V56"/><ellipse class="f" cx="120" cy="56" rx="70" ry="18"/><ellipse class="y" cx="120" cy="56" rx="70" ry="18"/></g>
 <circle class="yf" cx="172" cy="80" r="3"/><circle class="d" cx="172" cy="118" r="3"/><circle class="d" cx="172" cy="156" r="3"/>
 <path class="s" d="M120 24V8M108 14l12-10 12 10"/></svg></div>
             <div>
-              <h3>Data Storage</h3>
-              <p>Secure, scalable storage that is resilient and optimized for performance, wherever your data lives.</p>
-              <p class="cats">Capabilities</p>
-              <ul><li>On-Premises</li><li>Cloud</li><li>Hybrid</li><li>Tiering</li><li>Capacity Planning</li></ul>
-            </div>
-          </article>
-          <article class="svc" id="svc-ai">
-            <div><span class="num">03 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/><path class="g" style="stroke-opacity:.22" d="M40 40L120 30 M40 40L120 70 M40 40L120 110 M40 40L120 150 M40 90L120 30 M40 90L120 70 M40 90L120 110 M40 90L120 150 M40 140L120 30 M40 140L120 70 M40 140L120 110 M40 140L120 150 M120 30L200 60 M120 30L200 120 M120 70L200 60 M120 70L200 120 M120 110L200 60 M120 110L200 120 M120 150L200 60 M120 150L200 120"/><circle class="f" cx="40" cy="40" r="9"/><circle class="s" cx="40" cy="40" r="9"/><circle class="f" cx="40" cy="90" r="9"/><circle class="s" cx="40" cy="90" r="9"/><circle class="f" cx="40" cy="140" r="9"/><circle class="s" cx="40" cy="140" r="9"/><circle class="f" cx="120" cy="30" r="9"/><circle class="s" cx="120" cy="30" r="9"/><circle class="f" cx="120" cy="70" r="9"/><circle class="s" cx="120" cy="70" r="9"/><circle class="f" cx="120" cy="110" r="9"/><circle class="s" cx="120" cy="110" r="9"/><circle class="f" cx="120" cy="150" r="9"/><circle class="s" cx="120" cy="150" r="9"/><circle class="f" cx="200" cy="60" r="9"/><circle class="s" cx="200" cy="60" r="9"/><circle class="f" cx="200" cy="120" r="9"/><circle class="s" cx="200" cy="120" r="9"/>
-<path class="y" d="M40 90L120 70L200 60"/><circle class="yf" cx="40" cy="90" r="5"/><circle class="yf" cx="120" cy="70" r="5"/><circle class="yf" cx="200" cy="60" r="7"/>
-<path class="y" d="M212 60h16M222 54l6 6-6 6"/></svg></div>
-            <div>
-              <h3>Artificial Intelligence</h3>
-              <p>Cutting-edge AI that drives smart decisions. We turn your data into insight you can act on.</p>
-              <p class="cats">Capabilities</p>
-              <ul><li>Predictive Analytics</li><li>Natural Language Processing</li><li>Machine Learning</li><li>AI Readiness</li></ul>
+              <h3>Enterprise Storage &amp; Infrastructure</h3>
+              <p>Design, delivery and lifecycle management of enterprise storage that is resilient, scalable and sized for your workloads.</p>
+              <p class="cats">Platforms &amp; capabilities</p>
+              <ul><li>NetApp ONTAP (AFF, FAS, ASA, C-Series)</li><li>NetApp MetroCluster</li><li>NetApp StorageGRID</li><li>Dell PowerMax</li><li>Dell PowerScale</li><li>Dell PowerStore &amp; Unity</li><li>HPE Storage</li><li>Capacity &amp; performance sizing</li></ul>
             </div>
           </article>
           <article class="svc" id="svc-backup">
-            <div><span class="num">04 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/>
+            <div><span class="num">02 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/>
 <path class="g" style="stroke-opacity:.3" d="M120 22a68 68 0 1 1-48 20"/>
 <path class="y" d="M66 30l6 12-13 2"/>
 <path class="f" d="M120 40l40 14v30c0 26-17 44-40 54-23-10-40-28-40-54V54z"/><path class="s" d="M120 40l40 14v30c0 26-17 44-40 54-23-10-40-28-40-54V54z"/>
@@ -550,10 +547,37 @@ footer .mono { font-family: var(--font-mono); }
 <rect class="s" x="20" y="150" width="40" height="18" rx="3"/><rect class="s" x="66" y="150" width="40" height="18" rx="3"/><rect class="y" x="180" y="150" width="40" height="18" rx="3"/>
 <path class="s" d="M28 159h24M74 159h24"/><path class="y" d="M188 159h24"/><path class="g" style="stroke-opacity:.35" stroke-dasharray="3 4" d="M112 159h62"/></svg></div>
             <div>
-              <h3>Backup &amp; Cyber Recovery</h3>
-              <p>Robust backup and disaster recovery strategies that safeguard your critical information and keep the business running.</p>
-              <p class="cats">Capabilities</p>
-              <ul><li>RPO / RTO Design</li><li>Immutable Copies</li><li>3-2-1 Strategy</li><li>Ransomware Recovery</li><li>Recovery Testing</li></ul>
+              <h3>Backup, Recovery &amp; Cyber Resilience</h3>
+              <p>Data protection that still works on your worst day: immutable, air-gapped copies and recovery that is tested, not assumed.</p>
+              <p class="cats">Platforms &amp; capabilities</p>
+              <ul><li>Commvault</li><li>Rubrik Security Cloud &amp; CDM</li><li>Veeam Backup &amp; Replication</li><li>Dell PowerProtect</li><li>Dell CyberSense</li><li>Oracle ZDLRA</li><li>Air-gapped &amp; immutable backup</li><li>Disaster &amp; cyber recovery</li></ul>
+            </div>
+          </article>
+          <article class="svc" id="svc-virt">
+            <div><span class="num">03 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/>
+<path class="f" d="M150 58a22 22 0 0 1 42-8 18 18 0 1 1 6 35h-46a14 14 0 0 1-2-27z"/><path class="y" d="M150 58a22 22 0 0 1 42-8 18 18 0 1 1 6 35h-46a14 14 0 0 1-2-27z"/>
+<rect class="s" x="22" y="40" width="86" height="22" rx="3"/><rect class="s" x="22" y="68" width="86" height="22" rx="3"/><rect class="s" x="22" y="96" width="86" height="22" rx="3"/>
+<path class="s" d="M32 51h30M32 79h22M32 107h34"/><circle class="yf" cx="96" cy="51" r="3"/><circle class="d" cx="96" cy="79" r="3"/><circle class="d" cx="96" cy="107" r="3"/>
+<rect class="f" x="14" y="128" width="102" height="20" rx="3"/><rect class="s" x="14" y="128" width="102" height="20" rx="3"/><path class="s" d="M26 138h10M44 138h10M62 138h10"/>
+<path class="g" style="stroke-opacity:.45" stroke-dasharray="4 5" d="M108 79C130 79 136 88 150 85"/>
+<path class="s" d="M150 116h56M150 130h40M150 144h48"/><path class="y" d="M140 116l-8 0"/></svg></div>
+            <div>
+              <h3>Virtualisation &amp; Hybrid Cloud</h3>
+              <p>Software-defined data centres and hybrid cloud designs that put each workload where it runs best, on-premises or in the cloud.</p>
+              <p class="cats">Platforms &amp; capabilities</p>
+              <ul><li>VMware vSphere / ESXi &amp; vCenter</li><li>VMware vSAN</li><li>VMware Cloud Foundation</li><li>Dell VxRail</li><li>Microsoft Hyper-V</li><li>Microsoft Azure</li><li>AWS</li><li>Cloud migration &amp; modernisation</li></ul>
+            </div>
+          </article>
+          <article class="svc" id="svc-k8s">
+            <div><span class="num">04 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/><path class="s" d="M83.0 47.5 70.0 55.0 57.0 47.5 57.0 32.5 70.0 25.0 83.0 32.5Z"/><path class="s" d="M110.0 47.5 97.0 55.0 84.0 47.5 84.0 32.5 97.0 25.0 110.0 32.5Z"/><path class="f" d="M137.0 47.5 124.0 55.0 111.0 47.5 111.0 32.5 124.0 25.0 137.0 32.5Z"/><path class="y" d="M137.0 47.5 124.0 55.0 111.0 47.5 111.0 32.5 124.0 25.0 137.0 32.5Z"/><path class="s" d="M69.0 71.5 56.0 79.0 43.0 71.5 43.0 56.5 56.0 49.0 69.0 56.5Z"/><path class="f" d="M96.0 71.5 83.0 79.0 70.0 71.5 70.0 56.5 83.0 49.0 96.0 56.5Z"/><path class="y" d="M96.0 71.5 83.0 79.0 70.0 71.5 70.0 56.5 83.0 49.0 96.0 56.5Z"/><path class="f" d="M123.0 71.5 110.0 79.0 97.0 71.5 97.0 56.5 110.0 49.0 123.0 56.5Z"/><path class="y" d="M123.0 71.5 110.0 79.0 97.0 71.5 97.0 56.5 110.0 49.0 123.0 56.5Z"/><path class="s" d="M150.0 71.5 137.0 79.0 124.0 71.5 124.0 56.5 137.0 49.0 150.0 56.5Z"/><path class="s" d="M83.0 95.5 70.0 103.0 57.0 95.5 57.0 80.5 70.0 73.0 83.0 80.5Z"/><path class="s" d="M110.0 95.5 97.0 103.0 84.0 95.5 84.0 80.5 97.0 73.0 110.0 80.5Z"/><path class="s" d="M137.0 95.5 124.0 103.0 111.0 95.5 111.0 80.5 124.0 73.0 137.0 80.5Z"/>
+<path class="s" d="M97 104v14"/><path class="g" style="stroke-opacity:.45" d="M70 104v8h54v-8"/>
+<ellipse class="f" cx="97" cy="128" rx="44" ry="10"/><path class="s" d="M53 128v18c0 6 20 10 44 10s44-4 44-10v-18"/><ellipse class="s" cx="97" cy="128" rx="44" ry="10"/>
+<path class="s" d="M168 56h46v30h-46zM168 96h46v30h-46z"/><path class="y" d="M176 66h30M176 106h22"/><path class="g" style="stroke-opacity:.45" stroke-dasharray="4 5" d="M141 140h44v-14"/></svg></div>
+            <div>
+              <h3>Cloud-Native &amp; Kubernetes Infrastructure</h3>
+              <p>The infrastructure underneath containers: persistent storage, data protection and platforms your developers can rely on.</p>
+              <p class="cats">Platforms &amp; capabilities</p>
+              <ul><li>Kubernetes <span class="dev" title="Developing expertise">Developing</span></li><li>SUSE Rancher <span class="dev" title="Developing expertise">Developing</span></li><li>Red Hat OpenShift</li><li>Docker / containers</li><li>Persistent storage &amp; CSI</li><li>S3 object storage integration</li></ul>
             </div>
           </article>
           <article class="svc" id="svc-cleanup">
@@ -566,25 +590,25 @@ footer .mono { font-family: var(--font-mono); }
 <rect class="s" x="156" y="118" width="66" height="16" rx="3"/><path class="s" d="M162 126h34"/>
 <rect class="s" x="156" y="142" width="66" height="16" rx="3" style="stroke-dasharray:3 4"/><path class="g" style="stroke-opacity:.4" d="M162 150h40"/></svg></div>
             <div>
-              <h3>Data Clean-up &amp; Classification</h3>
-              <p>We clean, de-duplicate and classify your data, so sensitive information is protected and valuable data is easy to find.</p>
-              <p class="cats">Capabilities</p>
-              <ul><li>De-duplication</li><li>PII Discovery</li><li>Classification</li><li>Retention Rules</li><li>Archiving</li></ul>
+              <h3>Data Management, Classification &amp; AI</h3>
+              <p>Know what data you have, protect what is sensitive under the AVG (GDPR), and prepare clean, governed data for AI.</p>
+              <p class="cats">Platforms &amp; capabilities</p>
+              <ul><li>Data classification</li><li>PII &amp; AVG discovery</li><li>De-duplication &amp; clean-up</li><li>Retention &amp; governance</li><li>Encryption at rest &amp; in transit</li><li>AI readiness</li></ul>
             </div>
           </article>
-          <article class="svc" id="svc-education">
+          <article class="svc" id="svc-management">
             <div><span class="num">06 / 06</span><svg class="art" viewBox="0 0 240 180" aria-hidden="true"><path class="g" d="M0 150H240M0 120H240M0 90H240M0 60H240M0 30H240M30 0V180M60 0V180M90 0V180M120 0V180M150 0V180M180 0V180M210 0V180"/>
-<path class="f" d="M120 22c-28 0-48 20-48 46 0 18 10 28 18 38 5 6 8 12 8 20h44c0-8 3-14 8-20 8-10 18-20 18-38 0-26-20-46-48-46z"/>
-<path class="s" d="M120 22c-28 0-48 20-48 46 0 18 10 28 18 38 5 6 8 12 8 20h44c0-8 3-14 8-20 8-10 18-20 18-38 0-26-20-46-48-46zM100 136h40M104 146h32M112 156h16"/>
-<path class="g" style="stroke-opacity:.35" d="M100 56l20 18 20-22M120 74v26M100 56l-4 26 24 18 24-18-4-30"/>
-<circle class="d" cx="100" cy="56" r="4"/><circle class="d" cx="140" cy="52" r="4"/><circle class="d" cx="96" cy="82" r="4"/><circle class="d" cx="144" cy="82" r="4"/><circle class="d" cx="120" cy="100" r="4"/>
-<circle class="yf" cx="120" cy="74" r="6"/>
-<path class="y" d="M42 68H24M216 68h-18M58 30L46 18M182 30l12-12M120 10V2"/></svg></div>
+<rect class="f" x="92" y="18" width="56" height="30" rx="4"/><rect class="y" x="92" y="18" width="56" height="30" rx="4"/>
+<path class="yf" d="M104 30h32v3h-32zM104 37h20v3h-20z"/>
+<path class="s" d="M120 48v18M48 66h144M48 66v18M120 66v18M192 66v18"/>
+<rect class="s" x="20" y="84" width="56" height="70" rx="4"/><rect class="s" x="92" y="84" width="56" height="70" rx="4"/><rect class="s" x="164" y="84" width="56" height="70" rx="4"/>
+<path class="s" d="M30 98h36M30 110h28M30 122h36M30 134h20M102 98h36M102 110h22M102 122h36M102 134h30M174 98h36M174 110h30M174 122h18M174 134h36"/>
+<circle class="yf" cx="66" cy="110" r="3"/><circle class="yf" cx="138" cy="134" r="3"/></svg></div>
             <div>
-              <h3>Education &amp; Enablement</h3>
-              <p>Many teams pay for capabilities they never switch on. We show you what already exists and train your people to use it.</p>
-              <p class="cats">Capabilities</p>
-              <ul><li>Capability Reviews</li><li>Workshops</li><li>Team Training</li><li>Roadmaps</li></ul>
+              <h3>Architecture, Integration &amp; Consultancy</h3>
+              <p>We connect the pieces into one working whole, document it properly and teach your team the capabilities they already own.</p>
+              <p class="cats">Platforms &amp; capabilities</p>
+              <ul><li>Solutions architecture</li><li>HLD / LLD documentation</li><li>Infrastructure integration</li><li>Infrastructure as Code &amp; automation</li><li>Monitoring &amp; observability</li><li>Capability reviews &amp; training</li></ul>
             </div>
           </article>
         </div>
@@ -626,9 +650,43 @@ footer .mono { font-family: var(--font-mono); }
         <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><circle class="s" cx="20" cy="20" r="6"/><path class="s" d="M20 5v5M20 30v5M5 20h5M30 20h5M9 9l4 4M27 27l4 4M31 9l-4 4M13 27l-4 4"/><circle class="y" cx="20" cy="20" r="2"/></svg><h3>High-tech &amp; critical infrastructure</h3><p>Engineering, manufacturing and airport operations where downtime stops the business.</p></article>
         <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><rect class="s" x="7" y="6" width="26" height="8" rx="2"/><rect class="s" x="7" y="16" width="26" height="8" rx="2"/><rect class="s" x="7" y="26" width="26" height="8" rx="2"/><path class="y" d="M12 10h2M12 20h2M12 30h2"/></svg><h3>IT services, hosting &amp; telecom</h3><p>Data centres, hosting providers, distributors and system integrators that run data for many customers.</p></article>
       </div>
-      <div class="platforms" aria-label="Platforms we work with">
-        <span class="lbl">Platforms we work with</span>
-        <span class="p">VMware</span><span class="p">NetApp MetroCluster</span><span class="p">Commvault</span><span class="p">Dell Storage</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section gutter" id="technology">
+    <div class="rail">
+      <div class="section-head">
+        <div>
+          <p class="label"><span class="index">[05]</span> Technology</p>
+          <h2>One integrated ecosystem<span class="hl">.</span></h2>
+        </div>
+        <p>We don't sell a list of products. Our value is integrating these platforms into complete, protected enterprise infrastructure, and knowing which one fits your use case.</p>
+      </div>
+      <div class="eco" aria-label="Core technology ecosystem">
+        <div class="eco-item"><b>NetApp</b><span>Storage &amp; data management</span></div>
+        <div class="eco-item"><b>Dell Technologies</b><span>PowerMax, PowerScale &amp; PowerProtect</span></div>
+        <div class="eco-item"><b>Commvault</b><span>Backup &amp; recovery</span></div>
+        <div class="eco-item"><b>VMware</b><span>Virtualisation &amp; SDDC</span></div>
+        <div class="eco-item"><b>Microsoft Azure</b><span>Cloud &amp; hybrid cloud</span></div>
+        <div class="eco-item"><b>AWS</b><span>Cloud infrastructure</span></div>
+        <div class="eco-item"><b>Kubernetes</b><span>Container platforms</span><span class="dev" title="Developing expertise">Developing</span></div>
+        <div class="eco-item"><b>SUSE Rancher</b><span>Container management</span><span class="dev" title="Developing expertise">Developing</span></div>
+        <div class="eco-item"><b>Cisco &amp; Brocade</b><span>Networking &amp; SAN</span></div>
+        <div class="eco-item"><b>F5 &amp; Infoblox</b><span>Application delivery &amp; DNS/IPAM</span><span class="dev" title="Developing expertise">Developing</span></div>
+      </div>
+      <p class="dev-note"><span class="dev" title="Developing expertise">Developing</span> We are actively building hands-on experience with these technologies, and say so openly.</p>
+      <div class="tgroups">
+        <div class="tgroup"><span class="n">01</span><h3>Enterprise storage &amp; data management</h3><ul><li>NetApp ONTAP (AFF, FAS, ASA, C-Series)</li><li>NetApp MetroCluster</li><li>NetApp StorageGRID</li><li>Dell PowerMax</li><li>Dell PowerScale (Isilon)</li><li>Dell PowerStore</li><li>Dell Unity</li><li>HPE enterprise storage</li></ul></div>
+        <div class="tgroup"><span class="n">02</span><h3>Backup, recovery &amp; cyber resilience</h3><ul><li>Commvault</li><li>Rubrik Security Cloud (RSC)</li><li>Rubrik CDM</li><li>Veeam Backup &amp; Replication</li><li>Dell PowerProtect</li><li>Dell CyberSense</li><li>Oracle ZDLRA</li><li>Air-gapped &amp; immutable storage</li><li>Disaster &amp; cyber recovery</li></ul></div>
+        <div class="tgroup"><span class="n">03</span><h3>Virtualisation &amp; software-defined infrastructure</h3><ul><li>VMware vSphere / ESXi</li><li>VMware vCenter</li><li>VMware vSAN</li><li>VMware Cloud Foundation</li><li>Dell VxRail</li><li>Microsoft Hyper-V</li><li>Software-defined data centre (SDDC)</li></ul></div>
+        <div class="tgroup"><span class="n">04</span><h3>Cloud &amp; hybrid cloud</h3><ul><li>Microsoft Azure</li><li>AWS</li><li>Hybrid cloud architecture</li><li>Cloud infrastructure design</li><li>Cloud storage &amp; data management</li><li>Cloud migration &amp; modernisation</li><li>Enterprise cloud integration</li></ul></div>
+        <div class="tgroup"><span class="n">05</span><h3>Kubernetes &amp; cloud-native</h3><ul><li>Kubernetes <span class="dev" title="Developing expertise">Developing</span></li><li>SUSE Rancher <span class="dev" title="Developing expertise">Developing</span></li><li>Red Hat OpenShift</li><li>Docker / containers</li><li>Persistent storage for Kubernetes</li><li>Container Storage Interface (CSI)</li><li>S3 object storage integration</li></ul></div>
+        <div class="tgroup"><span class="n">06</span><h3>Networking, SAN &amp; connectivity</h3><ul><li>Cisco networking</li><li>Fibre Channel SAN</li><li>Brocade SAN switching</li><li>F5 BIG-IP load balancers <span class="dev" title="Developing expertise">Developing</span></li><li>Infoblox DNS, DHCP &amp; IPAM <span class="dev" title="Developing expertise">Developing</span></li><li>Kong API Gateway</li><li>iSCSI &amp; Ethernet</li><li>Multipathing &amp; redundancy</li></ul></div>
+        <div class="tgroup"><span class="n">07</span><h3>Operating systems &amp; platforms</h3><ul><li>Red Hat Enterprise Linux (RHEL)</li><li>SUSE Linux Enterprise Server (SLES)</li><li>Microsoft Windows Server</li><li>Linux system administration</li><li>Infrastructure automation</li></ul></div>
+        <div class="tgroup"><span class="n">08</span><h3>Security, governance &amp; compliance</h3><ul><li>Data classification</li><li>Encryption at rest &amp; in transit</li><li>Identity &amp; access management (IAM)</li><li>Zero Trust architecture</li><li>Immutable backup</li><li>Ransomware protection</li><li>Business continuity &amp; DR planning</li><li>Data retention &amp; governance</li></ul></div>
+        <div class="tgroup"><span class="n">09</span><h3>Architecture, design &amp; automation</h3><ul><li>Enterprise infrastructure architecture</li><li>Technical solutions design</li><li>Capacity planning &amp; workload sizing</li><li>High availability</li><li>HLD / LLD documentation</li><li>Monitoring &amp; observability</li><li>Infrastructure as Code (IaC)</li></ul></div>
       </div>
     </div>
   </section>
@@ -639,7 +697,7 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[05]</span> Why choose us</p>
+          <p class="label"><span class="index">[06]</span> Why choose us</p>
           <h2>A partner, not a provider<span class="hl">.</span></h2>
         </div>
         <p>Our team brings deep industry knowledge and explains complex ideas in plain language, so everyone involved stays aligned.</p>
@@ -659,7 +717,7 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[06]</span> How we work</p>
+          <p class="label"><span class="index">[07]</span> How we work</p>
           <h2>Three ways to start<span class="hl">.</span></h2>
         </div>
         <p>Most clients begin with an assessment, then decide whether to have us deliver the work, support it afterwards, or both. Every step starts with the why.</p>
@@ -696,7 +754,7 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[07]</span> Questions</p>
+          <p class="label"><span class="index">[08]</span> Questions</p>
           <h2>FAQ<span class="hl">.</span></h2>
         </div>
         <p>Short answers to the questions we hear most. Something missing? Email us and we'll answer it.</p>
@@ -724,7 +782,7 @@ footer .mono { font-family: var(--font-mono); }
         </details>
         <details>
           <summary>Which platforms do you work with?</summary>
-          <div class="a"><p>Among others VMware, NetApp (including MetroCluster), Commvault and Dell storage. We also help you get more out of the platforms you already have.</p></div>
+          <div class="a"><p>Our core ecosystem includes NetApp, Dell Technologies, Commvault, Rubrik, Veeam, VMware, Microsoft Azure and AWS, plus Cisco and Brocade for networking and SAN. The full list is in the <a href="#technology">Technology</a> section above.</p><p>We are open about where we are still building experience, such as Kubernetes, SUSE Rancher, F5 and Infoblox. We also help you get more out of the platforms you already own.</p></div>
         </details>
         <details>
           <summary>How do we get started?</summary>
@@ -738,7 +796,7 @@ footer .mono { font-family: var(--font-mono); }
 
   <section class="contact gutter" id="contact">
     <div class="rail">
-      <p class="label"><span class="index">[08]</span> Let's collaborate, communicate and innovate</p>
+      <p class="label"><span class="index">[09]</span> Let's collaborate, communicate and innovate</p>
       <h2>Let's talk<span class="hl">.</span></h2>
       <div class="contact-row">
         <p>Tell us what you are trying to achieve. We will start by asking why, and show you how to turn your data into your most valuable asset.</p>
