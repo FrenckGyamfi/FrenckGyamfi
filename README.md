@@ -8,7 +8,8 @@ Static one-page website for DataiTECH (Data Informatics and Technologies), Zoete
 | `light.html` | Light version of the same site (marked `noindex`) |
 | `privacy.html` | Privacy statement (AVG/GDPR) – have it reviewed before launch |
 | `fonts/` | Self-hosted fonts (Montserrat, Inter, IBM Plex Mono – SIL Open Font License) |
-| `favicon.svg` | Browser tab icon |
+| `favicon-32.png`, `apple-touch-icon.png` | Browser tab and home-screen icons |
+| `images/` | Logo (light and dark versions) and service illustrations (WebP) |
 | `og-image.png` | 1200×630 preview image for LinkedIn and other social links |
 
 ## Before going live
