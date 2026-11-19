@@ -28,11 +28,11 @@ put('F3', 'Factuur', f(10, color=GREY), R)
 
 # sender
 put('B6', 'DataiTECH', f(11, True))
-put('B7', 'Data Informatics and Technologies', f(10, color=GREY))
+put('B7', 'Data Informatics & Technologies B.V.', f(10, color=GREY))
 put('B8', '[Street and number]', PH)
 put('B9', '[Postcode] Zoetermeer, The Netherlands', PH)
-put('B10', 'enquiries@dataitechbv.com', f(10))
-put('B11', 'www.dataitechbv.com', f(10))
+put('B10', 'enquiries@dataitechbv.com · www.dataitechbv.com', f(10))
+put('B11', '+31 6 1451 5145 · +31 6 2020 3034', f(10))
 
 # invoice details
 details = [('Invoice number', 'DT-2026-0001', None), ('Invoice date', '=TODAY()', 'DD-MM-YYYY'), ('Due date (30 days)', '=F7+30', 'DD-MM-YYYY'),
@@ -81,12 +81,12 @@ p0 = t0 + 6
 put(f'B{p0}', 'PAYMENT', f(9, True, GOLD))
 put(f'B{p0+1}', '="Please pay within 30 days, by "&TEXT(F8,"DD-MM-YYYY")&", quoting invoice number "&F6&"."', f(10))
 put(f'B{p0+2}', 'IBAN  [NL00 BANK 0000 0000 00]   ·   BIC  [BANKNL2A]', PH)
-put(f'B{p0+3}', 'Account name  DataiTECH', f(10))
+put(f'B{p0+3}', 'Account name  Data Informatics & Technologies B.V.', f(10))
 put(f'B{p0+5}', 'For EU business clients outside the Netherlands: "VAT reverse-charged (BTW verlegd)", set the VAT rate to 0% and show the client VAT number. Delete this line otherwise.', f(8, color=GREY, italic=True))
 ws[f'B{p0+5}'].alignment = L; ws.merge_cells(f'B{p0+5}:F{p0+5}'); ws.row_dimensions[p0 + 5].height = 26
 
 fr = p0 + 8
-put(f'B{fr}', 'DataiTECH · Zoetermeer, The Netherlands · KvK 62108158 · BTW NL854655475B02 · enquiries@dataitechbv.com', f(8, color=GREY))
+put(f'B{fr}', 'Data Informatics & Technologies B.V. (DataiTECH) · Zoetermeer, The Netherlands · KvK 62198158 · BTW NL854655475B01', f(8, color=GREY))
 ws.merge_cells(f'B{fr}:F{fr}'); ws[f'B{fr}'].alignment = Alignment(horizontal='center')
 for col in 'BCDEF': ws[f'{col}{fr}'].border = Border(top=thin)
 

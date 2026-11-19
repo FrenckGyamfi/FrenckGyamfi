@@ -7,8 +7,8 @@ def signature_html(logo_src=LOGO_URL):
     return f'''<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;{td}font-size:13px;line-height:1.45;">
   <tr>
     <td style="padding:0 0 10px 0;{td}">
-      <div style="font-size:15px;font-weight:bold;color:{ink};">[Your name]</div>
-      <div style="font-size:13px;color:{gold};">[Job title] · DataiTECH</div>
+      <div style="font-size:15px;font-weight:bold;color:{ink};">Frenck F.N Gyamfi</div>
+      <div style="font-size:13px;color:{gold};">Data Informatics &amp; Technologies B.V.</div>
     </td>
   </tr>
   <tr>
@@ -18,8 +18,8 @@ def signature_html(logo_src=LOGO_URL):
   </tr>
   <tr>
     <td style="padding:8px 0 0 0;border-top:2px solid {gold};{td}font-size:12px;">
-      <span style="color:{grey};">T</span>&nbsp;<a href="tel:[+31600000000]" style="color:{ink};text-decoration:none;">[+31 6 0000 0000]</a>
-      &nbsp;&nbsp;<span style="color:{grey};">E</span>&nbsp;<a href="mailto:enquiries@dataitechbv.com" style="color:{ink};text-decoration:none;">enquiries@dataitechbv.com</a>
+      <span style="color:{grey};">M</span>&nbsp;<a href="tel:+31614515145" style="color:{ink};text-decoration:none;">+31 6 1451 5145</a>&nbsp;·&nbsp;<a href="tel:+31620203034" style="color:{ink};text-decoration:none;">+31 6 2020 3034</a><br>
+      <span style="color:{grey};">E</span>&nbsp;<a href="mailto:enquiries@dataitechbv.com" style="color:{ink};text-decoration:none;">enquiries@dataitechbv.com</a>
       &nbsp;&nbsp;<span style="color:{grey};">W</span>&nbsp;<a href="https://www.dataitechbv.com" style="color:{ink};text-decoration:none;">dataitechbv.com</a><br>
       <span style="color:{grey};">Zoetermeer, The Netherlands</span>
       &nbsp;·&nbsp;<a href="[https://www.linkedin.com/company/your-page]" style="color:{gold};text-decoration:none;">LinkedIn</a>
@@ -29,21 +29,22 @@ def signature_html(logo_src=LOGO_URL):
     <td style="padding:8px 0 0 0;{td}font-size:12px;color:{gold};font-style:italic;">Data and AI. Now it makes sense.</td>
   </tr>
   <tr>
-    <td style="padding:6px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:{grey};">DataiTECH · KvK 62108158 · BTW NL854655475B02</td>
+    <td style="padding:6px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:{grey};">Data Informatics &amp; Technologies B.V. · KvK 62198158 · BTW NL854655475B01</td>
   </tr>
 </table>'''
 
-SIGNATURE_TXT = '''[Your name]
-[Job title] · DataiTECH
+SIGNATURE_TXT = '''Frenck F.N Gyamfi
+Data Informatics & Technologies B.V. | DataiTECH
 
-T [+31 6 0000 0000] | E enquiries@dataitechbv.com | W dataitechbv.com
+M +31 6 1451 5145 | +31 6 2020 3034
+E enquiries@dataitechbv.com | W dataitechbv.com
 Zoetermeer, The Netherlands
 
 Data and AI. Now it makes sense.
-DataiTECH · KvK 62108158 · BTW NL854655475B02'''
+Data Informatics & Technologies B.V. · KvK 62198158 · BTW NL854655475B01'''
 
-SIGNATURE_SHORT = '''[Your name] · DataiTECH
-[+31 6 0000 0000] · dataitechbv.com'''
+SIGNATURE_SHORT = '''Frenck F.N Gyamfi · DataiTECH
++31 6 1451 5145 · dataitechbv.com'''
 
 TEMPLATES = [
  ('enquiry', 'Reply to a new enquiry', 'Within one working day of a new enquiry.',
