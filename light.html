@@ -187,6 +187,19 @@ p { margin: 0; }
 .section-head p { color: var(--muted); font-size: 1.08rem; max-width: 30rem; }
 @media (max-width: 860px) { .section-head { grid-template-columns: 1fr; } }
 
+/* First engagement */
+.offer { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; padding: clamp(24px, 4vw, 48px); border: 1px solid var(--line); background: var(--panel); }
+.offer > * { min-width: 0; }
+.offer h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); margin-top: 18px; }
+.offer-lede { color: var(--muted); font-size: 1.15rem; margin: 18px 0 28px; max-width: 32rem; }
+.offer-lede strong { color: var(--fg); font-weight: 500; }
+.offer-facts { margin: 0; display: grid; }
+.offer-facts > div { padding: 16px 0; border-top: 1px solid var(--line); }
+.offer-facts > div:last-child { border-bottom: 1px solid var(--line); }
+.offer-facts dt { font: 500 0.75rem var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--signal-text); }
+.offer-facts dd { margin: 4px 0 0; }
+@media (max-width: 860px) { .offer { grid-template-columns: 1fr; } }
+
 /* Challenges */
 .challenges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .challenge { display: flex; flex-direction: column; gap: 12px; padding: 26px; border: 1px solid var(--line); background: var(--panel); text-decoration: none; color: inherit; min-width: 0; transition: border-color .2s ease, transform .2s ease; }
@@ -328,11 +341,11 @@ footer .mono { font-family: var(--font-mono); }
   <div class="rail nav">
     <a class="brand" href="#top" aria-label="DataiTECH home"><img class="logo" src="images/logo.png" alt="DataiTECH" width="504" height="120"></a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#challenges">Challenges</a>
+      <a href="#first-engagement">Assessment</a>
       <a href="#services">Services</a>
       <a href="#sectors">Sectors</a>
       <a href="#technology">Platforms</a>
-      <a href="#how-we-work">How we work</a>
+      <a href="#how-we-work">Method</a>
       <a href="#faq">FAQ</a>
       <a class="pill" href="#contact">Contact
         <span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M2 10 10 2M4 2h6v6"/></svg></span>
@@ -342,11 +355,11 @@ footer .mono { font-family: var(--font-mono); }
   </div>
   <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
     <div class="rail">
-      <a href="#challenges">Challenges</a>
+      <a href="#first-engagement">Assessment</a>
       <a href="#services">Services</a>
       <a href="#sectors">Sectors</a>
       <a href="#technology">Platforms</a>
-      <a href="#how-we-work">How we work</a>
+      <a href="#how-we-work">Method</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
@@ -393,9 +406,9 @@ footer .mono { font-family: var(--font-mono); }
       <div class="section-head">
         <div>
           <p class="label"><span class="index">[01]</span> Challenges we solve</p>
-          <h2>Recognise this<span class="hl">?</span></h2>
+          <h2>When to call us<span class="hl">.</span></h2>
         </div>
-        <p>The questions we hear from infrastructure managers, architects and CISOs. If one of them is on your agenda, we should talk.</p>
+        <p>If one of these questions is on your desk, that is the moment to call. They are the questions we hear most from infrastructure managers, architects and CISOs.</p>
       </div>
       <div class="challenges">
         <a class="challenge" href="#svc-backup">
@@ -440,11 +453,34 @@ footer .mono { font-family: var(--font-mono); }
 
   <div class="divider"></div>
 
+  <section class="section gutter offer-sec" id="first-engagement">
+    <div class="rail">
+      <div class="offer">
+        <div class="offer-main">
+          <p class="label"><span class="index">[02]</span> Your first engagement</p>
+          <h2>The Data Resilience Assessment<span class="hl">.</span></h2>
+          <p class="offer-lede">One clear answer to the question boards and auditors now ask: <strong>can we recover, and what do we fix first?</strong></p>
+          <a class="pill solid" href="#contact">Request the assessment
+            <span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M2 10 10 2M4 2h6v6"/></svg></span>
+          </a>
+        </div>
+        <dl class="offer-facts">
+          <div><dt>Scope</dt><dd>Storage, backup and recovery of your business-critical systems, and where your sensitive data lives.</dd></div>
+          <div><dt>You get</dt><dd>A recoverability verdict, a risk register and a prioritised plan, presented to your team and management.</dd></div>
+          <div><dt>Success</dt><dd>Agreed with you in writing before we start.</dd></div>
+          <div><dt>Price</dt><dd>Fixed scope, fixed price, agreed upfront. No hourly surprises.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <section class="section gutter" id="services">
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[02]</span> What we do</p>
+          <p class="label"><span class="index">[03]</span> What we do</p>
           <h2>Services<span class="hl">.</span></h2>
         </div>
         <p>Six service pillars, from the storage layer up to the data that runs on it, on-premises, in the cloud or both.</p>
@@ -526,10 +562,10 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[03]</span> Sectors we serve</p>
+          <p class="label"><span class="index">[04]</span> Sectors we serve</p>
           <h2>Built for regulated data<span class="hl">.</span></h2>
         </div>
-        <p>We work where data is critical, sensitive and regulated: from central banking and national government to defence, universities and the infrastructure the Netherlands runs on.</p>
+        <p>We work where data is critical, sensitive and regulated. Our best fit: organisations where downtime, data loss or a failed audit is not an option.</p>
       </div>
       <div class="sectors">
         <article class="sector"><svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path class="s" d="M6 16h28L20 7zM9 16v14M15 16v14M25 16v14M31 16v14M5 33h30"/><path class="y" d="M17 23h6"/></svg><h3>Banking &amp; financial services</h3><p>Central banking, retail and corporate banking, where data integrity, auditability and recovery time are regulated.</p></article>
@@ -548,7 +584,7 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[04]</span> Platforms</p>
+          <p class="label"><span class="index">[05]</span> Platforms</p>
           <h2>One integrated ecosystem<span class="hl">.</span></h2>
         </div>
         <p>We don't sell products. We integrate these platforms into complete, protected infrastructure and tell you which one fits your use case.</p>
@@ -580,10 +616,10 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[05]</span> How we work</p>
+          <p class="label"><span class="index">[06]</span> Our method</p>
           <h2>Why, what, then value<span class="hl">.</span></h2>
         </div>
-        <p>Every engagement answers three questions in order. You only commit to the next step once you have seen the result of the previous one.</p>
+        <p>The same proven method on every engagement, so we never start from scratch. You only commit to the next step once you have seen the result of the previous one.</p>
       </div>
       <div class="steps">
         <article class="step">
@@ -591,7 +627,7 @@ footer .mono { font-family: var(--font-mono); }
           <span class="ask">Why: what problem are we solving?</span>
           <h3>Assessment</h3>
           <p>A short, fixed-scope review of your infrastructure and data protection.</p>
-          <ul><li>Your storage, backup and virtualisation estate</li><li>Risks: recovery gaps, end-of-support, sensitive data</li><li>Capabilities you already own but don't use</li></ul>
+          <ul><li>Success agreed upfront, in writing</li><li>The exact scope defined</li><li>Risks: recovery gaps, end-of-support, sensitive data</li><li>Capabilities you already own but don't use</li></ul>
           <p class="out"><b>You get:</b> a clear report and a prioritised plan.</p>
         </article>
         <article class="step">
@@ -599,24 +635,24 @@ footer .mono { font-family: var(--font-mono); }
           <span class="ask">What does success look like?</span>
           <h3>Project delivery</h3>
           <p>We design and implement the solution with your team.</p>
-          <ul><li>Storage, backup and cyber recovery design</li><li>Virtualisation, cloud and migration</li><li>Data clean-up and classification</li></ul>
+          <ul><li>Storage, backup, cyber recovery, virtualisation and cloud</li><li>Honest progress updates, including the difficult conversations</li><li>Decisions prepared for you, so you can choose quickly</li></ul>
           <p class="out"><b>You get:</b> a working solution and a team that knows how to run it.</p>
         </article>
         <article class="step">
           <span class="n">Step 3</span>
           <span class="ask">How will we know it keeps working?</span>
-          <h3>Ongoing support</h3>
-          <p>We stay on as your infrastructure partner after go-live.</p>
-          <ul><li>Regular recovery testing</li><li>Health checks and capacity planning</li><li>Training as your platforms change</li></ul>
-          <p class="out"><b>You get:</b> confidence that it keeps working.</p>
+          <h3>Handover &amp; support</h3>
+          <p>A clear handover, and support for as long as you need it.</p>
+          <ul><li>Documentation (HLD/LLD) and knowledge transfer</li><li>Tested recovery, with the evidence</li><li>Optional health checks and recovery testing</li></ul>
+          <p class="out"><b>You get:</b> a team that can run it, and proof that it works.</p>
         </article>
       </div>
-      <h3 class="commit-head">What you can count on</h3>
+      <h3 class="commit-head">What every client can count on</h3>
       <div class="reasons">
-        <div><span class="index">→ Clarity</span><h3>Plain language</h3><p>Clear explanations and regular updates for architects, managers and procurement alike.</p></div>
-        <div><span class="index">→ Ownership</span><h3>Documented &amp; transferable</h3><p>HLD/LLD documentation and knowledge transfer, so your team can run what we build.</p></div>
-        <div><span class="index">→ Evidence</span><h3>Tested, not assumed</h3><p>We prove that failover and recovery work, and give you the evidence for your auditors.</p></div>
-        <div><span class="index">→ Your time</span><h3>Your time back</h3><p>We take on time-consuming work like clean-up, classification and recovery testing, so your team can focus on bigger priorities.</p></div>
+        <div><span class="index">→ Outcome</span><h3>The problem, solved well</h3><p>We fix what you hired us for, and take the time-consuming work off your team's plate.</p></div>
+        <div><span class="index">→ Capability</span><h3>A stronger team</h3><p>Documentation and knowledge transfer, so your team can run what we build without us.</p></div>
+        <div><span class="index">→ Clarity</span><h3>A result you can describe</h3><p>Every engagement ends with an outcome you can explain in one sentence to your board or auditor.</p></div>
+        <div><span class="index">→ Evidence</span><h3>Proof of our contribution</h3><p>Tested failover and recovery, with evidence you can show.</p></div>
       </div>
     </div>
   </section>
@@ -627,7 +663,7 @@ footer .mono { font-family: var(--font-mono); }
     <div class="rail">
       <div class="section-head">
         <div>
-          <p class="label"><span class="index">[06]</span> Questions</p>
+          <p class="label"><span class="index">[07]</span> Helpful answers</p>
           <h2>FAQ<span class="hl">.</span></h2>
         </div>
         <p>Three topics we explain in almost every first conversation. Something else on your mind? Ask us.</p>
@@ -653,10 +689,10 @@ footer .mono { font-family: var(--font-mono); }
 
   <section class="contact gutter" id="contact">
     <div class="rail">
-      <p class="label"><span class="index">[07]</span> Let's collaborate, communicate and innovate</p>
+      <p class="label"><span class="index">[08]</span> Let's collaborate, communicate and innovate</p>
       <h2>Let's talk<span class="hl">.</span></h2>
       <div class="contact-row">
-        <p>Tell us about your environment, the challenge and your timeline. We will come back with a clear first step.</p>
+        <p>Tell us about your environment, the challenge and your timeline. We will come back with a clear first step. Every conversation is confidential, and we are happy to sign your NDA first.</p>
         <div class="contact-actions">
           <div class="email-box">
             <a id="email" href="mailto:enquiries@dataitechbv.com">enquiries@dataitechbv.com</a>

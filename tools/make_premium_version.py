@@ -16,6 +16,8 @@ rep('<header class="site-header gutter">', '<header class="site-header gutter dz
 rep('<section class="hero gutter">', '<section class="hero gutter dz">')
 rep('<section class="contact gutter" id="contact">', '<section class="contact gutter dz" id="contact">')
 rep('<footer class="gutter divider">', '<footer class="gutter divider dz">')
+rep('<section class="section gutter offer-sec" id="first-engagement">', '<section class="section gutter offer-sec dz" id="first-engagement">')
+rep('<section class="section gutter" id="how-we-work">', '<section class="section gutter dz" id="how-we-work">')
 h = h.replace('src="images/logo.png"', 'src="images/logo-on-dark.png"')
 
 rep('<h1>Data and AI.<br>', '<h1>Data and AI<span class="pd">.</span><br>')
@@ -97,6 +99,17 @@ h1 .hl, h2 .hl, .pd { margin-left: -0.06em; }
 .email-box a { color: #FFFFFF; }
 footer.dz .rail { color: #9AA2B1; }
 footer.dz a { color: #D9DDE4; }
+/* dark feature bands: offer + method (white cards on dark, as in the reference slides) */
+.offer-sec.dz, #how-we-work.dz { background: var(--glow); }
+.dz .label .index { color: var(--signal); }
+.dz .offer { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.12); border-radius: 22px; box-shadow: 0 30px 80px -40px rgba(0,0,0,.6); }
+.dz .offer h2 { color: #FFFFFF; }
+.dz .offer-lede { color: #C9CED7; }
+.dz .offer-lede strong { color: #FFFFFF; }
+.dz .offer-facts dd { color: #E3E6EB; }
+.dz .step, .dz .reasons > div, .dz .reasons > div + div { --fg: #14171F; --muted: #4F5563; --dim: #8A8F9A; --line: #E7E4DC; --signal-text: #8C6A1E; color: var(--fg); background: #FFFFFF; border-color: rgba(255,255,255,.2); box-shadow: 0 30px 70px -40px rgba(0,0,0,.7); }
+.dz .commit-head { color: #9AA2B1; }
+.dz .step .out b { color: var(--signal-text); }
 @media (max-width: 960px) { .reasons > div, .reasons > div + div, .reasons > div:nth-child(2n) { border: 1px solid rgba(20,23,31,.06); padding: 22px; } }
 '''
 rep('</style>\n</head>', PREMIUM + '</style>\n</head>')
