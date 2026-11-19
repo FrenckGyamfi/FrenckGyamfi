@@ -76,3 +76,9 @@ assert h.count(_t['DARK']) == 1, 'iso tokens'
 h = h.replace(_t['DARK'], _t['LIGHT'])
 open(dst, 'w').write(h)
 print('iso light ok')
+h = open(dst).read()
+assert h.count('src="images/dark/') == 6
+h = h.replace('src="images/dark/', 'src="images/')
+h = h.replace('.svc .art.photo { max-width: 340px; height: auto; aspect-ratio: auto; margin-top: 14px; }',
+              '.svc .art.photo { max-width: 340px; height: auto; aspect-ratio: auto; margin-top: 14px; border-radius: 12px; background: #FFFFFF; border: 1px solid var(--line); }')
+open(dst, 'w').write(h); print('light images ok')
