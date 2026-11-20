@@ -82,3 +82,7 @@ h = h.replace('src="images/dark/', 'src="images/')
 h = h.replace('.svc .art.photo { max-width: 340px; height: auto; aspect-ratio: auto; margin-top: 14px; }',
               '.svc .art.photo { max-width: 340px; height: auto; aspect-ratio: auto; margin-top: 14px; border-radius: 12px; background: #FFFFFF; border: 1px solid var(--line); }')
 open(dst, 'w').write(h); print('light images ok')
+h = open(dst).read()
+assert h.count('ctx.shadowBlur = 8;') == 1
+h = h.replace('ctx.shadowBlur = 8;', 'ctx.shadowBlur = 0;')   # glow reads as smudges on a light background
+open(dst, 'w').write(h); print('light glow off')
