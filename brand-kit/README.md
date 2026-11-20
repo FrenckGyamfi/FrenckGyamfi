@@ -11,7 +11,7 @@
 
 ## Before first use
 
-Replace every `[placeholder]`: your name, job title, phone number, street address, postcode, IBAN/BIC and LinkedIn page.
+Replace the remaining `[placeholders]`: street address, postcode and LinkedIn page.
 
 The signature loads the logo from `https://www.dataitechbv.com/images/logo.png`, so it shows once the website is live.
 Until then, upload `logo.png` somewhere public (or insert it as an image in your mail program) and use that address.
@@ -28,7 +28,7 @@ Until then, upload `logo.png` somewhere public (or insert it as an image in your
 ## Invoice
 
 1. Make a copy for each invoice, named after the invoice number (e.g. `DT-2026-0001.xlsx`).
-2. Replace everything in gold italic `[brackets]`: address, IBAN/BIC, client details, PO number and service period.
+2. Replace everything in gold italic `[brackets]`: your street address, client details, PO number and service period.
 3. Fill in description, quantity, unit and rate per line. Amounts, subtotal, VAT (21%) and total calculate automatically.
 4. The invoice date defaults to today (`=TODAY()`). Type the actual date before sending, so it doesn't change when reopened.
 5. Save as PDF and send it with the "Sending an invoice" email template.

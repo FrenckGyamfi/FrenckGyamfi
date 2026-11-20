@@ -294,8 +294,8 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
 .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 64px; align-items: end; margin-top: clamp(32px, 5vw, 56px); }
 .contact-row > * { min-width: 0; }
 .contact-copy > p { color: var(--on-dark-muted); font-size: 1.1rem; max-width: 30rem; }
-.person { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
-.monogram { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #14171F; font: 800 1.05rem var(--display); letter-spacing: -0.02em; box-shadow: 0 10px 30px -10px rgba(226,176,74,.7); }
+.person { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+.portrait { flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); box-shadow: 0 12px 32px -12px rgba(226,176,74,.7); }
 .person div b { display: block; font: 700 1.08rem var(--display); color: #FFFFFF; letter-spacing: -0.01em; }
 .person div span { display: block; font-size: .88rem; color: var(--on-dark-muted); }
 .contact-actions { display: grid; gap: 16px; justify-items: start; }
@@ -624,7 +624,7 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
       <div class="contact-row">
         <div class="contact-copy">
           <p>Tell us about your environment, the challenge and your timeline. We will come back with a clear first step. Every conversation is confidential, and we are happy to sign your NDA first.</p>
-          <div class="person"><span class="monogram" aria-hidden="true">FG</span><div><b>Frenck F.N Gyamfi</b><span>Data Informatics &amp; Technologies B.V. · Zoetermeer</span></div></div>
+          <div class="person"><img class="portrait" src="images/frenck-gyamfi.webp" alt="Frenck F.N Gyamfi" width="480" height="480" loading="lazy" decoding="async"><div><b>Frenck F.N Gyamfi</b><span>Data Informatics &amp; Technologies B.V. · Zoetermeer</span></div></div>
         </div>
         <div class="contact-actions">
           <div class="email"><a id="email" href="mailto:enquiries@dataitechbv.com">enquiries@dataitechbv.com</a><button type="button" id="copy-email">Copy</button></div>

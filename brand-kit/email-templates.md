@@ -140,7 +140,7 @@ Dear [Name],
 
 Please find attached invoice [DT-2026-0001] for [description or period], for a total of EUR [amount] incl. VAT.
 
-Payment is due on [due date], to IBAN [IBAN] in the name of DataiTECH, quoting the invoice number. Your purchase order number [PO number] is stated on the invoice.
+Payment is due on [due date], to IBAN NL34 ABNA 0136 6796 41 in the name of DataiTECH, quoting the invoice number. Your purchase order number [PO number] is stated on the invoice.
 
 If anything needs to change for your accounts payable process, let me know and I will send a corrected version.
 
@@ -155,7 +155,7 @@ Beste [naam],
 
 In de bijlage vindt u factuur [DT-2026-0001] voor [omschrijving of periode], voor een totaalbedrag van EUR [bedrag] incl. btw.
 
-Wij verzoeken u het bedrag vóór [vervaldatum] over te maken naar IBAN [IBAN] ten name van DataiTECH, onder vermelding van het factuurnummer. Uw inkoopordernummer [PO-nummer] staat op de factuur.
+Wij verzoeken u het bedrag vóór [vervaldatum] over te maken naar IBAN NL34 ABNA 0136 6796 41 ten name van DataiTECH, onder vermelding van het factuurnummer. Uw inkoopordernummer [PO-nummer] staat op de factuur.
 
 Moet er iets worden aangepast voor uw crediteurenadministratie? Laat het me weten, dan stuur ik een gecorrigeerde versie.
 
@@ -173,7 +173,7 @@ Dear [Name],
 
 According to our records, invoice [DT-2026-0001] of [invoice date] for EUR [amount] was due on [due date] and we have not yet received payment. If it has crossed with your payment, please disregard this message.
 
-If not, could you arrange payment within 7 days to IBAN [IBAN], quoting the invoice number? If there is a problem with the invoice, let me know so we can resolve it quickly. A copy of the invoice is attached.
+If not, could you arrange payment within 7 days to IBAN NL34 ABNA 0136 6796 41, quoting the invoice number? If there is a problem with the invoice, let me know so we can resolve it quickly. A copy of the invoice is attached.
 
 Kind regards,
 ```
@@ -186,7 +186,7 @@ Beste [naam],
 
 Volgens onze administratie is factuur [DT-2026-0001] van [factuurdatum] voor EUR [bedrag] op [vervaldatum] vervallen en hebben wij de betaling nog niet ontvangen. Heeft uw betaling dit bericht gekruist, dan kunt u het als niet verzonden beschouwen.
 
-Zo niet, wilt u het bedrag dan binnen 7 dagen overmaken naar IBAN [IBAN], onder vermelding van het factuurnummer? Is er iets mis met de factuur, laat het me dan weten zodat we het snel oplossen. Een kopie van de factuur vindt u in de bijlage.
+Zo niet, wilt u het bedrag dan binnen 7 dagen overmaken naar IBAN NL34 ABNA 0136 6796 41, onder vermelding van het factuurnummer? Is er iets mis met de factuur, laat het me dan weten zodat we het snel oplossen. Een kopie van de factuur vindt u in de bijlage.
 
 Met vriendelijke groet,
 ```
@@ -202,7 +202,7 @@ Dear [Name],
 
 Despite our reminder of [date], we have not yet received payment of invoice [DT-2026-0001] for EUR [amount], which was due on [due date].
 
-We ask you to pay the outstanding amount within 14 days of this message, by [date], to IBAN [IBAN], quoting the invoice number. If payment has not been received by then, we will charge the statutory commercial interest (wettelijke handelsrente) from the due date.
+We ask you to pay the outstanding amount within 14 days of this message, by [date], to IBAN NL34 ABNA 0136 6796 41, quoting the invoice number. If payment has not been received by then, we will charge the statutory commercial interest (wettelijke handelsrente) from the due date.
 
 We would much rather avoid that. If there is an issue, please contact me today.
 
@@ -217,7 +217,7 @@ Beste [naam],
 
 Ondanks onze herinnering van [datum] hebben wij de betaling van factuur [DT-2026-0001] voor EUR [bedrag], vervallen op [vervaldatum], nog niet ontvangen.
 
-Wij verzoeken u het openstaande bedrag binnen 14 dagen na dagtekening van dit bericht, uiterlijk [datum], over te maken naar IBAN [IBAN], onder vermelding van het factuurnummer. Is de betaling dan niet ontvangen, dan brengen wij vanaf de vervaldatum de wettelijke handelsrente in rekening.
+Wij verzoeken u het openstaande bedrag binnen 14 dagen na dagtekening van dit bericht, uiterlijk [datum], over te maken naar IBAN NL34 ABNA 0136 6796 41, onder vermelding van het factuurnummer. Is de betaling dan niet ontvangen, dan brengen wij vanaf de vervaldatum de wettelijke handelsrente in rekening.
 
 Dat voorkomen we liever. Is er een probleem, neem dan vandaag nog contact met mij op.
 

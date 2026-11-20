@@ -80,7 +80,7 @@ ws.row_dimensions[t0 + 3].height = 22
 p0 = t0 + 6
 put(f'B{p0}', 'PAYMENT', f(9, True, GOLD))
 put(f'B{p0+1}', '="Please pay within 30 days, by "&TEXT(F8,"DD-MM-YYYY")&", quoting invoice number "&F6&"."', f(10))
-put(f'B{p0+2}', 'IBAN  [NL00 BANK 0000 0000 00]   ·   BIC  [BANKNL2A]', PH)
+put(f'B{p0+2}', 'IBAN  NL34 ABNA 0136 6796 41   ·   BIC  ABNANL2A', f(10, True))
 put(f'B{p0+3}', 'Account name  Data Informatics & Technologies B.V.', f(10))
 put(f'B{p0+5}', 'For EU business clients outside the Netherlands: "VAT reverse-charged (BTW verlegd)", set the VAT rate to 0% and show the client VAT number. Delete this line otherwise.', f(8, color=GREY, italic=True))
 ws[f'B{p0+5}'].alignment = L; ws.merge_cells(f'B{p0+5}:F{p0+5}'); ws.row_dimensions[p0 + 5].height = 26
