@@ -66,6 +66,7 @@ h = h.replace('.hl { color: var(--signal-text); }', '.hl { color: var(--signal-l
 h = h.replace('.svc h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); color: var(--signal-text); }', '.svc h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); color: var(--fg); }')
 h = h.replace('.sector .ico .y { stroke: var(--signal);', '.sector .ico .y { stroke: var(--signal-line);')
 h = h.replace('<meta name="theme-color" content="#060606">', '<meta name="theme-color" content="#F6F6F3">')
+h = h.replace('<meta name="robots" content="noindex">\n', '', 1)
 h = h.replace('<link rel="canonical" href="https://www.dataitechbv.com/">', '<link rel="canonical" href="https://www.dataitechbv.com/">\n<meta name="robots" content="noindex">')
 open(dst, 'w').write(h)
 print('light extras ok')
