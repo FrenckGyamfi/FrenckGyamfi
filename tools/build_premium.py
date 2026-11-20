@@ -124,12 +124,13 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
-.band { padding-block: clamp(80px, 10vw, 136px); }
+.band { padding-block: clamp(72px, 8.5vw, 116px); }
+.statement + .band { padding-top: clamp(16px, 2vw, 28px); }
 .dark { background: var(--glow); color: var(--on-dark); }
 .dark .hl { color: var(--gold); }
 .eyebrow { font: 600 0.76rem/1.2 var(--body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); }
 .dark .eyebrow { color: var(--gold); }
-.head { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px 64px; align-items: end; margin-bottom: clamp(40px, 5vw, 64px); }
+.head { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px 64px; align-items: end; margin-bottom: clamp(32px, 4vw, 52px); }
 .head > * { min-width: 0; }
 .head h2 { margin-top: 16px; }
 .head > p { color: var(--muted); font-size: 1.08rem; max-width: 32rem; }
@@ -189,10 +190,13 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
 .hero-lead { margin-top: 30px; max-width: 36rem; font-size: 1.22rem; line-height: 1.55; color: var(--on-dark-muted); }
 .hero-lead strong { color: #FFFFFF; font-weight: 500; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
+.assure { list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; color: var(--on-dark-muted); font-size: .92rem; }
+.assure li { display: flex; align-items: center; gap: 9px; }
+.assure li::before { content: ""; flex: none; width: 18px; height: 18px; border-radius: 50%; background: rgba(226,176,74,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5.2 9.3l2.4 2.4 5.2-5.4' fill='none' stroke='%23E2B04A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 18px no-repeat; }
 @media (max-width: 700px) { .hero canvas { -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 55%, #000 100%); mask-image: linear-gradient(180deg, transparent 0%, transparent 55%, #000 100%); opacity: .55; } }
 
 /* statement */
-.statement { padding-block: clamp(80px, 10vw, 128px); text-align: center; }
+.statement { padding-block: clamp(64px, 8vw, 104px) clamp(56px, 7vw, 88px); text-align: center; }
 .statement p { font: 800 clamp(1.6rem, 3.6vw, 2.8rem)/1.14 var(--display); letter-spacing: -0.035em; max-width: 64rem; margin: 0 auto; text-wrap: balance; }
 .statement .soft { color: #A3A7B0; }
 .statement .gold { color: var(--gold-line); }
@@ -236,12 +240,13 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
 .svc-cards { display: grid; gap: 20px; }
 .svc { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 32px; align-items: center; padding: 28px; scroll-margin-top: 104px; }
 .svc .num { display: block; font: 600 .72rem var(--body); letter-spacing: .14em; color: var(--navy); }
-.svc .art { display: block; width: 100%; height: auto; margin-top: 12px; border-radius: 16px; }
+.art-tile { display: block; margin-top: 12px; border-radius: 18px; overflow: hidden; isolation: isolate; background: linear-gradient(160deg, #F8F5EE, #EEEAE0); }
+.art-tile .art { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
 .svc h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); line-height: 1.12; }
 .svc p { color: var(--muted); margin-top: 10px; }
 .svc .cats { margin-top: 18px; font: 600 .7rem var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
 .svc ul { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.svc li { font-size: .8rem; padding: 5px 11px; border-radius: 999px; background: #F6F4EF; border: 1px solid var(--line); }
+.svc li { font-size: .78rem; padding: 4px 10px; border-radius: 999px; color: var(--muted); border: 1px solid #E6E2D7; }
 @media (max-width: 1000px) { .services { grid-template-columns: 1fr; } .svc-index { display: none; } }
 @media (max-width: 680px) { .svc { grid-template-columns: 1fr; gap: 16px; padding: 22px; } }
 
@@ -307,7 +312,11 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
 .contact h2 { font-size: clamp(3.6rem, 12vw, 10rem); line-height: .9; letter-spacing: -0.055em; margin-top: 18px; }
 .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 64px; align-items: end; margin-top: clamp(32px, 5vw, 56px); }
 .contact-row > * { min-width: 0; }
-.contact-row > p { color: var(--on-dark-muted); font-size: 1.1rem; max-width: 30rem; }
+.contact-copy > p { color: var(--on-dark-muted); font-size: 1.1rem; max-width: 30rem; }
+.person { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+.monogram { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #14171F; font: 800 1.05rem var(--display); letter-spacing: -0.02em; box-shadow: 0 10px 30px -10px rgba(226,176,74,.7); }
+.person div b { display: block; font: 700 1.08rem var(--display); color: #FFFFFF; letter-spacing: -0.01em; }
+.person div span { display: block; font-size: .88rem; color: var(--on-dark-muted); }
 .contact-actions { display: grid; gap: 16px; justify-items: start; }
 .email { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); }
 .email a { color: #FFFFFF; text-decoration: none; font: 700 clamp(1.25rem, 2.6vw, 1.9rem) var(--display); letter-spacing: -0.02em; overflow-wrap: anywhere; }
@@ -427,6 +436,7 @@ JS = r'''
 # content blocks: give them the card surface
 challenges = challenges.replace('<a class="challenge"', '<a class="challenge card"')
 sv_cards = sv_cards.replace('<article class="svc"', '<article class="svc card"')
+sv_cards = re.sub(r'(<img class="art photo"[^>]*>)', r'<span class="art-tile">\1</span>', sv_cards)
 sectors = sectors.replace('<article class="sector">', '<article class="sector card">')
 eco = eco.replace('<div class="eco-item">', '<div class="eco-item card">')
 steps = steps.replace('<article class="step">', '<article class="step card">')
@@ -476,6 +486,11 @@ page = f'''<!doctype html>
         <a class="btn gold" href="#first-engagement">Request the assessment {ARROW}</a>
         <a class="btn" href="#challenges">When to call us {ARROW}</a>
       </div>
+      <ul class="assure" aria-label="What you can count on">
+        <li>Fixed scope, fixed price</li>
+        <li>Success agreed upfront</li>
+        <li>Tested recovery, with evidence</li>
+      </ul>
     </div>
   </section>
 
@@ -588,7 +603,10 @@ page = f'''<!doctype html>
       <p class="eyebrow">Let's work together</p>
       <h2>Let's talk<span class="hl">.</span></h2>
       <div class="contact-row">
-        <p>{contact_p}</p>
+        <div class="contact-copy">
+          <p>{contact_p}</p>
+          <div class="person"><span class="monogram" aria-hidden="true">FG</span><div><b>Frenck F.N Gyamfi</b><span>Data Informatics &amp; Technologies B.V. · Zoetermeer</span></div></div>
+        </div>
         <div class="contact-actions">
           <div class="email"><a id="email" href="mailto:enquiries@dataitechbv.com">enquiries@dataitechbv.com</a><button type="button" id="copy-email">Copy</button></div>
           <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">Connect on LinkedIn {ARROW}</a>
