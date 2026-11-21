@@ -6,7 +6,6 @@ Static one-page website for DataiTECH (Data Informatics and Technologies), Zoete
 | --- | --- |
 | `index.html` | **Main site** (premium design). Built from `dark.html`: `python3 tools/build_premium.py dark.html index.html` |
 | `dark.html` | Dark alternative, and the **single source of all site text**: edit copy here, then rebuild (marked `noindex`) |
-| `preview-3d.html` | Preview of the main site with a 3D opening scene (`js/hero3d.js`, Three.js in `js/vendor/`, MIT licence). Build: `python3 tools/build_premium.py dark.html preview-3d.html --hero3d` |
 | `light.html` | Light alternative, built from `dark.html` with `tools/make_light_version.py` (marked `noindex`) |
 | `privacy.html` | Privacy statement (AVG/GDPR) – have it reviewed before launch |
 | `fonts/` | Self-hosted fonts (Plus Jakarta Sans, Montserrat, Inter, IBM Plex Mono – SIL Open Font License) |
