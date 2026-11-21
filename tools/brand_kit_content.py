@@ -19,7 +19,7 @@ def signature_html(logo_src=LOGO_URL):
   <tr>
     <td style="padding:8px 0 0 0;border-top:2px solid {gold};{td}font-size:12px;">
       <span style="color:{grey};">M</span>&nbsp;<a href="tel:+31614515145" style="color:{ink};text-decoration:none;">+31 6 1451 5145</a>&nbsp;·&nbsp;<a href="tel:+31620203034" style="color:{ink};text-decoration:none;">+31 6 2020 3034</a><br>
-      <span style="color:{grey};">E</span>&nbsp;<a href="mailto:info@dataitech.eu" style="color:{ink};text-decoration:none;">info@dataitech.eu</a>
+      <span style="color:{grey};">E</span>&nbsp;<a href="mailto:frenck@dataitech.eu" style="color:{ink};text-decoration:none;">frenck@dataitech.eu</a>
       &nbsp;&nbsp;<span style="color:{grey};">W</span>&nbsp;<a href="https://dataitech.eu" style="color:{ink};text-decoration:none;">dataitech.eu</a><br>
       <span style="color:{grey};">Zoetermeer, The Netherlands</span>
       &nbsp;·&nbsp;<a href="[https://www.linkedin.com/company/your-page]" style="color:{gold};text-decoration:none;">LinkedIn</a>
@@ -37,7 +37,7 @@ SIGNATURE_TXT = '''Frenck F.N Gyamfi
 Data Informatics & Technologies B.V. | DataiTECH
 
 M +31 6 1451 5145 | +31 6 2020 3034
-E info@dataitech.eu | W dataitech.eu
+E frenck@dataitech.eu | W dataitech.eu
 Zoetermeer, The Netherlands
 
 Data and AI. Now it makes sense.
