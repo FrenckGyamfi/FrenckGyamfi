@@ -23,6 +23,10 @@ for page in PAGES:
         if ref and not ref.startswith(('http', 'mailto', 'tel', 'data')) and os.path.isfile(ref):
             files.add(ref)
 
+# ES module imports inside our own scripts (for example the Three.js library used by js/hero3d.js)
+for js in [f for f in list(files) if f.endswith('.js')]:
+    for ref in re.findall(r"from\s+'(\./[^']+)'", open(js).read()):
+        files.add(os.path.normpath(os.path.join(os.path.dirname(js), ref)))
 missing = [f for f in files if not os.path.isfile(f)]
 assert not missing, missing
 assert not any(f.startswith(('brand-kit/', 'tools/')) for f in files)

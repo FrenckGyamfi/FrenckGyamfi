@@ -8,6 +8,7 @@ import re
 import sys
 
 src, dst = sys.argv[1], sys.argv[2]
+HERO3D = '--hero3d' in sys.argv[3:]   # 3D opening scene (Three.js)
 h = open(src).read()
 
 
@@ -74,6 +75,19 @@ FONTFACE = ''.join(
                                ('Inter', 'inter', (400, 500)),
                                ('IBM Plex Mono', 'ibm-plex-mono', (400, 500))]
     for w in weights)
+
+CSS3D = r'''
+/* 3D opening scene */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: center; }
+.hero-grid > * { min-width: 0; }
+.hero.has-3d h1, .hero-grid h1 { font-size: clamp(2.5rem, 4.6vw, 4.6rem); }
+.hero-3d { position: relative; height: clamp(420px, 40vw, 600px); margin-right: -40px; }
+.hero .hero-3d canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; -webkit-mask-image: none; mask-image: none; opacity: 1; }
+.hero.has-3d #field { opacity: .18; }
+.hero.no-3d .hero-3d { display: none; }
+.hero.no-3d .hero-grid { grid-template-columns: 1fr; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-3d { height: 340px; margin: 8px -20px 0; } }
+'''
 
 CSS = r'''
 /* DataiTECH premium. Dark glowing bands for the moments that matter (opening, offer, method, contact),
@@ -455,7 +469,7 @@ page = f'''<!doctype html>
 <!--FONTS-->
 <style>
 /*FONTFACE*/
-{FONTFACE}{CSS}
+{FONTFACE}{CSS}{CSS3D if HERO3D else ''}
 </style>
 </head>
 <body>
@@ -478,7 +492,7 @@ page = f'''<!doctype html>
 
   <section class="hero dark" aria-labelledby="hero-title">
     <canvas id="field" aria-hidden="true"></canvas>
-    <div class="wrap">
+    <div class="wrap{' hero-grid' if HERO3D else ''}">{'<div class="hero-text">' if HERO3D else ''}
       <p class="eyebrow">Infrastructure &amp; data protection · Zoetermeer</p>
       <h1 id="hero-title"><span class="line">Data and AI<span class="pd">.</span></span><br><span class="line">Now it <span class="gold">makes sense</span><span class="pd gold">.</span></span></h1>
       <p class="hero-lead">{hero_lead}</p>
@@ -490,7 +504,7 @@ page = f'''<!doctype html>
         <li>Fixed scope, fixed price</li>
         <li>Success agreed upfront</li>
         <li>Tested recovery, with evidence</li>
-      </ul>
+      </ul>{'</div><div class="hero-3d" id="hero3d" aria-hidden="true"></div>' if HERO3D else ''}
     </div>
   </section>
 
@@ -628,7 +642,7 @@ page = f'''<!doctype html>
 
 <a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 18 18" fill="none" stroke-width="2"><path d="M9 15V3M4 8l5-5 5 5"/></svg></a>
 
-<script>{JS}</script>
+<script>{JS}</script>{'<script type="module" src="js/hero3d.js"></script>' if HERO3D else ''}
 </body>
 </html>
 '''
