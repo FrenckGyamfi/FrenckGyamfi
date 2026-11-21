@@ -97,3 +97,7 @@ ws.page_margins = PageMargins(left=0.5, right=0.5, top=0.6, bottom=0.6)
 ws.print_options.horizontalCentered = True
 
 wb.save('brand-kit/DataiTECH-invoice-template.xlsx'); print('saved')
+
+# Note: openpyxl stores formulas without results, so phone previews (iPhone Files, Mail, WhatsApp)
+# show empty amounts. After building, recalculate once so the results are stored:
+#   soffice --headless --calc --convert-to xlsx:"Calc MS Excel 2007 XML" --outdir <dir> brand-kit/DataiTECH-invoice-template.xlsx
