@@ -11,7 +11,7 @@
 
 ## Before first use
 
-Replace the remaining `[placeholders]`: street address, postcode and LinkedIn page.
+Replace the remaining `[placeholders]`: your LinkedIn page in the signature.
 
 The signature loads the logo from `https://dataitech.eu/images/logo.png`, so it shows once the website is live.
 Until then, upload `logo.png` somewhere public (or insert it as an image in your mail program) and use that address.
@@ -27,12 +27,12 @@ Until then, upload `logo.png` somewhere public (or insert it as an image in your
 
 ## Invoice
 
-1. Make a copy for each invoice, named after the invoice number (e.g. `DT-2026-0001.xlsx`).
-2. Replace everything in gold italic `[brackets]`: your street address, client details, PO number and service period.
+1. Make a copy for each invoice, named after the invoice number (e.g. `2026-002.xlsx`).
+2. Replace everything in gold italic `[brackets]`: client details, PO number and service period.
 3. Fill in description, quantity, unit and rate per line. Amounts, subtotal, VAT (21%) and total calculate automatically.
 4. The invoice date defaults to today (`=TODAY()`). Type the actual date before sending, so it doesn't change when reopened.
 5. Save as PDF and send it with the "Sending an invoice" email template.
-6. Number invoices in an unbroken sequence (DT-2026-0001, DT-2026-0002, ...), as the Dutch tax authority requires.
+6. Number invoices in an unbroken sequence (2026-001, 2026-002, ...), as the Dutch tax authority requires.
 
 The invoice includes what a Dutch VAT invoice must show: sequential number, date, your name, address, KvK and VAT number,
 the client's name and address, a description and period of the service, amounts excluding VAT, the VAT rate and amount, and the total.
