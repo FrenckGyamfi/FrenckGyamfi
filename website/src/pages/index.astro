@@ -70,7 +70,7 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
             <article class="svc card" id={s.id}>
               <div>
                 <span class="num">{s.num}</span>
-                <span class="art-tile"><img class="art photo" src={'/' + s.image} srcset={`/${s.image.replace('.webp', '-480.webp')} 480w, /${s.image} 960w`} sizes="(max-width: 680px) calc(100vw - 88px), (max-width: 1000px) 40vw, 400px" alt={s.alt} width={s.width} height={s.height} loading="lazy" decoding="async"></span>
+                <span class="art-tile"><img class="art photo" src={s.image} srcset={`${s.image.replace('.webp', '-480.webp')} 480w, ${s.image} 960w`} sizes="(max-width: 680px) calc(100vw - 88px), (max-width: 1000px) 40vw, 400px" alt={s.alt} width={s.width} height={s.height} loading="lazy" decoding="async"></span>
               </div>
               <div>
                 <h3 set:html={s.title} />
@@ -146,7 +146,7 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
         <div class="contact-copy">
           <p set:html={contact.text} />
           <div class="person">
-            <img class="portrait" src={'/' + contact.person.photo} alt={contact.person.name} width="216" height="216" loading="lazy" decoding="async">
+            <img class="portrait" src={contact.person.photo} alt={contact.person.name} width="216" height="216" loading="lazy" decoding="async">
             <div><b>{contact.person.name}</b><span>{contact.person.role}</span></div>
           </div>
         </div>

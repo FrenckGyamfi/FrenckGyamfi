@@ -21,7 +21,7 @@ Work on the site (Node 22.23+):
 cd website
 npm install
 npm run dev       # live preview at http://localhost:4321
-npm run build     # static site in website/dist
+npm run build     # static site in website/dist (open dist/index.html directly, or upload it)
 ```
 
 ## Publishing to Hostinger
