@@ -31,7 +31,7 @@ put('B6', 'DataiTECH', f(11, True))
 put('B7', 'Data Informatics & Technologies B.V.', f(10, color=GREY))
 put('B8', '[Street and number]', PH)
 put('B9', '[Postcode] Zoetermeer, The Netherlands', PH)
-put('B10', 'enquiries@dataitechbv.com · www.dataitechbv.com', f(10))
+put('B10', 'info@dataitech.eu · dataitech.eu', f(10))
 put('B11', '+31 6 1451 5145 · +31 6 2020 3034', f(10))
 
 # invoice details

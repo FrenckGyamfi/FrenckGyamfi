@@ -15,11 +15,15 @@ Static one-page website for DataiTECH (Data Informatics and Technologies), Zoete
 | `og-image.png` | 1200×630 preview image for LinkedIn and other social links |
 | `tools/` | Build scripts for the site versions, illustrations, invoice and brand kit |
 
-## Before going live
+## Publishing to Hostinger (dataitech.eu)
 
-- The canonical URL, `og:url`, `og:image` and structured data assume the site runs at `https://www.dataitechbv.com/`. If the domain differs, change them in `dark.html` and rebuild (see below).
-- Replace the LinkedIn link in the contact section with the company page.
-- Upload the files to any static host (for example Netlify, Cloudflare Pages, GitHub Pages or your own web server) and serve over HTTPS.
+1. Build the upload package: `python3 tools/make_deploy.py dataitech-website.zip`.
+   It contains only public files; `brand-kit/`, `tools/` and the dark/light alternatives are never included.
+2. In Hostinger hPanel, make sure SSL is active for dataitech.eu (Security › SSL). The package forces HTTPS.
+3. Open File Manager › `public_html`, delete Hostinger's default page (`default.php` or `index.php`), upload the zip and extract it there.
+4. Check https://dataitech.eu, then submit `https://dataitech.eu/sitemap.xml` in Google Search Console.
+
+Do not connect this repository to Hostinger's Git deployment: it would publish the private `brand-kit/` folder.
 
 ## Changing the website text
 

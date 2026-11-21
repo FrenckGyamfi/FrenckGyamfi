@@ -67,11 +67,14 @@ h = h.replace('.svc h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); color: var(--
 h = h.replace('.sector .ico .y { stroke: var(--signal);', '.sector .ico .y { stroke: var(--signal-line);')
 h = h.replace('<meta name="theme-color" content="#060606">', '<meta name="theme-color" content="#F6F6F3">')
 h = h.replace('<meta name="robots" content="noindex">\n', '', 1)
-h = h.replace('<link rel="canonical" href="https://www.dataitechbv.com/">', '<link rel="canonical" href="https://www.dataitechbv.com/">\n<meta name="robots" content="noindex">')
+h = h.replace('<link rel="canonical" href="https://dataitech.eu/">', '<link rel="canonical" href="https://dataitech.eu/">\n<meta name="robots" content="noindex">')
 open(dst, 'w').write(h)
 print('light extras ok')
 _t = {}
-exec(open(__file__.rsplit('/', 1)[0] + '/isotokens.py').read(), _t)
+import os as _os
+_d = _os.path.dirname(_os.path.abspath(__file__))
+_tok = _os.path.join(_d, 'isometric_tokens.py') if _os.path.exists(_os.path.join(_d, 'isometric_tokens.py')) else _os.path.join(_d, 'isotokens.py')
+exec(open(_tok).read(), _t)
 h = open(dst).read()
 assert h.count(_t['DARK']) == 1, 'iso tokens'
 h = h.replace(_t['DARK'], _t['LIGHT'])

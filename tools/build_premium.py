@@ -608,7 +608,7 @@ page = f'''<!doctype html>
           <div class="person"><img class="portrait" src="images/frenck-gyamfi.webp" alt="Frenck F.N Gyamfi" width="480" height="480" loading="lazy" decoding="async"><div><b>Frenck F.N Gyamfi</b><span>Data Informatics &amp; Technologies B.V. · Zoetermeer</span></div></div>
         </div>
         <div class="contact-actions">
-          <div class="email"><a id="email" href="mailto:enquiries@dataitechbv.com">enquiries@dataitechbv.com</a><button type="button" id="copy-email">Copy</button></div>
+          <div class="email"><a id="email" href="mailto:info@dataitech.eu">info@dataitech.eu</a><button type="button" id="copy-email">Copy</button></div>
           <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">Connect on LinkedIn {ARROW}</a>
         </div>
       </div>

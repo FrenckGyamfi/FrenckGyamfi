@@ -13,7 +13,7 @@
 
 Replace the remaining `[placeholders]`: street address, postcode and LinkedIn page.
 
-The signature loads the logo from `https://www.dataitechbv.com/images/logo.png`, so it shows once the website is live.
+The signature loads the logo from `https://dataitech.eu/images/logo.png`, so it shows once the website is live.
 Until then, upload `logo.png` somewhere public (or insert it as an image in your mail program) and use that address.
 
 ## Email signature

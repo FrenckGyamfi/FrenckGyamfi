@@ -1,5 +1,5 @@
 """Content for the DataiTECH email signature and email templates (EN + NL)."""
-LOGO_URL = 'https://www.dataitechbv.com/images/logo.png'
+LOGO_URL = 'https://dataitech.eu/images/logo.png'
 
 def signature_html(logo_src=LOGO_URL):
     gold, ink, grey = '#B8893A', '#23262B', '#6B6B66'
@@ -13,14 +13,14 @@ def signature_html(logo_src=LOGO_URL):
   </tr>
   <tr>
     <td style="padding:0 0 10px 0;">
-      <a href="https://www.dataitechbv.com" style="text-decoration:none;"><img src="{logo_src}" width="168" height="40" alt="DataiTECH" style="display:block;border:0;width:168px;height:40px;"></a>
+      <a href="https://dataitech.eu" style="text-decoration:none;"><img src="{logo_src}" width="168" height="40" alt="DataiTECH" style="display:block;border:0;width:168px;height:40px;"></a>
     </td>
   </tr>
   <tr>
     <td style="padding:8px 0 0 0;border-top:2px solid {gold};{td}font-size:12px;">
       <span style="color:{grey};">M</span>&nbsp;<a href="tel:+31614515145" style="color:{ink};text-decoration:none;">+31 6 1451 5145</a>&nbsp;·&nbsp;<a href="tel:+31620203034" style="color:{ink};text-decoration:none;">+31 6 2020 3034</a><br>
-      <span style="color:{grey};">E</span>&nbsp;<a href="mailto:enquiries@dataitechbv.com" style="color:{ink};text-decoration:none;">enquiries@dataitechbv.com</a>
-      &nbsp;&nbsp;<span style="color:{grey};">W</span>&nbsp;<a href="https://www.dataitechbv.com" style="color:{ink};text-decoration:none;">dataitechbv.com</a><br>
+      <span style="color:{grey};">E</span>&nbsp;<a href="mailto:info@dataitech.eu" style="color:{ink};text-decoration:none;">info@dataitech.eu</a>
+      &nbsp;&nbsp;<span style="color:{grey};">W</span>&nbsp;<a href="https://dataitech.eu" style="color:{ink};text-decoration:none;">dataitech.eu</a><br>
       <span style="color:{grey};">Zoetermeer, The Netherlands</span>
       &nbsp;·&nbsp;<a href="[https://www.linkedin.com/company/your-page]" style="color:{gold};text-decoration:none;">LinkedIn</a>
     </td>
@@ -37,14 +37,14 @@ SIGNATURE_TXT = '''Frenck F.N Gyamfi
 Data Informatics & Technologies B.V. | DataiTECH
 
 M +31 6 1451 5145 | +31 6 2020 3034
-E enquiries@dataitechbv.com | W dataitechbv.com
+E info@dataitech.eu | W dataitech.eu
 Zoetermeer, The Netherlands
 
 Data and AI. Now it makes sense.
 Data Informatics & Technologies B.V. · KvK 62198158 · BTW NL854655475B01'''
 
 SIGNATURE_SHORT = '''Frenck F.N Gyamfi · DataiTECH
-+31 6 1451 5145 · dataitechbv.com'''
++31 6 1451 5145 · dataitech.eu'''
 
 TEMPLATES = [
  ('enquiry', 'Reply to a new enquiry', 'Within one working day of a new enquiry.',
