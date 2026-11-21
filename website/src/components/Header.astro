@@ -6,7 +6,7 @@ const link = (href: string) => (onHome ? href : '/' + href);
 ---
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href={onHome ? '#top' : '/'} aria-label="DataiTECH home"><img src="/images/logo-on-dark.png" alt="DataiTECH" width="504" height="120"></a>
+    <a class="brand" href={onHome ? '#top' : '/'} aria-label="DataiTECH home"><img src="/images/logo-on-dark-336.webp" srcset="/images/logo-on-dark-168.webp 168w, /images/logo-on-dark-336.webp 336w" sizes="(max-width: 520px) 126px, 160px" alt="DataiTECH" width="336" height="80"></a>
     <nav class="nav-links" aria-label="Main">
       {content.nav.map((n) => <a href={link(n.href)}>{n.label}</a>)}
       <a class="btn gold" href={link('#contact')}>Contact <Arrow /></a>
