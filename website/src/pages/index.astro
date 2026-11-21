@@ -29,16 +29,24 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
   <section class="band" id="challenges">
     <div class="wrap">
       <Head {...challenges} />
-      <div class="challenges">
-        {challenges.items.map((i) => (
-          <a class="challenge card" href={i.href}>
-            <span class="tag">{i.tag}</span>
-            <h3 set:html={i.title} />
-            <p set:html={i.text} />
-            <span class="more">{i.more}</span>
-          </a>
+      <div class="whynow">
+        <a class="wn-tile wn-feature" href={challenges.feature.href}>
+          <span class="wn-tag solid">{challenges.feature.tag}</span>
+          <h3>{challenges.feature.title}</h3>
+          <p>{challenges.feature.text}</p>
+          <span class="wn-link">{challenges.feature.link} <span aria-hidden="true">→</span></span>
+        </a>
+        {challenges.stats.map((t) => (
+          <div class="wn-tile">
+            <span class="wn-tag">{t.tag}</span>
+            <p class="wn-figure">{t.figure}</p>
+            <p class="wn-caption">{t.caption}</p>
+            <p class="wn-source">Source: <a href={t.sourceUrl} target="_blank" rel="noopener">{t.source}</a></p>
+            <a class="wn-link" href={t.href}>{t.question} <span aria-hidden="true">→</span></a>
+          </div>
         ))}
       </div>
+      <p class="wn-also"><span>{challenges.alsoLabel}</span>{challenges.also.map((a) => <a href={a.href}>{a.question} <span aria-hidden="true">→</span></a>)}</p>
     </div>
   </section>
 

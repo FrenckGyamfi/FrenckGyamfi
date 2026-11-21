@@ -59,49 +59,70 @@
   "challenges": {
     "eyebrow": "Challenges we solve",
     "title": "When to call us<span class=\"hl\">.</span>",
-    "intro": "If one of these questions is on your desk, that is the moment to call. They are the questions we hear most from infrastructure managers, architects and CISOs.",
-    "items": [
+    "intro": "Resilience isn't optional anymore. When one of these is on your desk, that is the moment to call. They are the questions we hear most from infrastructure managers, architects and CISOs.",
+    "feature": {
+      "tag": "Cyber recovery",
+      "title": "Can you prove you can recover?",
+      "text": "Auditors and boards now ask for evidence, not a backup policy. We design immutable, air-gapped copies and test the recovery, so you can show it works.",
+      "href": "#svc-backup",
+      "link": "How we help"
+    },
+    "stats": [
       {
-        "href": "#svc-backup",
-        "tag": "Backup & cyber resilience",
-        "title": "Can you prove you can recover from ransomware?",
-        "text": "Auditors and boards now ask for evidence, not a backup policy. We design immutable, air-gapped copies and test the recovery, so you can show it works.",
-        "more": "How we help →"
+        "tag": "Backups targeted",
+        "figure": "94%",
+        "caption": "of organisations hit by ransomware said attackers tried to compromise their backups.",
+        "source": "Sophos, State of Ransomware 2024",
+        "sourceUrl": "https://www.sophos.com/en-us/press/press-releases/2024/04/ransomware-payments-increase-500-last-year-finds-sophos-state",
+        "question": "Are your backups out of reach?",
+        "href": "#svc-backup"
       },
       {
-        "href": "#svc-backup",
-        "tag": "Compliance-driven resilience",
-        "title": "DORA, NIS2 or the BIO on your desk?",
-        "text": "Financial entities must comply with DORA since January 2025, NIS2 comes into Dutch law through the Cyberbeveiligingswet, and government works to the BIO. We turn those requirements into concrete resilience and recovery measures.",
-        "more": "How we help →"
+        "tag": "DORA in force",
+        "figure": "17 Jan 2025",
+        "caption": "DORA applies to EU financial entities, including testing of their digital operational resilience.",
+        "source": "ESMA",
+        "sourceUrl": "https://www.esma.europa.eu/digital-operational-resilience-act-dora",
+        "question": "DORA or the BIO on your desk?",
+        "href": "#first-engagement"
       },
       {
-        "href": "#svc-virt",
-        "tag": "Virtualisation & hybrid cloud",
-        "title": "VMware licensing forcing a rethink?",
-        "text": "Since the Broadcom acquisition many organisations face new VMware licensing and higher costs. We map your options: right-size, move to VMware Cloud Foundation, or shift workloads to Hyper-V or the cloud.",
-        "more": "How we help →"
+        "tag": "NIS2 fines",
+        "figure": "€10M",
+        "caption": "or 2% of worldwide turnover, whichever is higher: what NIS2 fines on essential entities can reach, at the very least.",
+        "source": "NIS2 Directive (EU) 2022/2555, art. 34",
+        "sourceUrl": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+        "question": "Ready for the Cyberbeveiligingswet?",
+        "href": "#first-engagement"
       },
       {
-        "href": "#svc-storage",
-        "tag": "Storage & infrastructure",
-        "title": "Storage at end of support, or simply full?",
-        "text": "Refresh, migrate or consolidate without disrupting the business, with capacity and performance sized on your real workload data.",
-        "more": "How we help →"
+        "tag": "VMware licensing",
+        "figure": "Dec 2023",
+        "caption": "Broadcom stopped selling perpetual VMware licences. vSphere, vSAN and Cloud Foundation moved to subscription.",
+        "source": "Broadcom",
+        "sourceUrl": "https://news.broadcom.com/news/vmware-by-broadcom-business-transformation",
+        "question": "VMware licensing forcing a rethink?",
+        "href": "#svc-virt"
       },
       {
-        "href": "#svc-cleanup",
-        "tag": "Data, classification & AI",
-        "title": "Do you know where your personal data lives?",
-        "text": "BSN numbers, HR files and medical records end up spread across shares and backups. We find, classify and protect them under the AVG (GDPR).",
-        "more": "How we help →"
+        "tag": "Personal data",
+        "figure": "€20M",
+        "caption": "or 4% of worldwide turnover, whichever is higher: the maximum fine under the AVG (GDPR).",
+        "source": "AVG / GDPR, art. 83(5)",
+        "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+        "question": "Do you know where your personal data lives?",
+        "href": "#svc-cleanup"
+      }
+    ],
+    "alsoLabel": "Also a moment to call",
+    "also": [
+      {
+        "question": "Storage at end of support, or simply full?",
+        "href": "#svc-storage"
       },
       {
-        "href": "#svc-k8s",
-        "tag": "Container & Kubernetes storage",
-        "title": "Containers in production, but who protects the data?",
-        "text": "Persistent storage and backup for OpenShift and Kubernetes are often an afterthought. We make stateful containers as safe as the rest of your estate.",
-        "more": "How we help →"
+        "question": "Containers in production, but who protects the data?",
+        "href": "#svc-k8s"
       }
     ]
   },

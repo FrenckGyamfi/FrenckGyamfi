@@ -129,16 +129,33 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
 
 /* when to call */
 #challenges { background: radial-gradient(40% 55% at 8% 35%, rgba(226,176,74,.14), transparent 70%), radial-gradient(40% 55% at 94% 70%, rgba(110,145,205,.14), transparent 70%); }
-.challenges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.challenge { display: flex; flex-direction: column; gap: 12px; padding: 28px; text-decoration: none; color: inherit; min-width: 0; transition: transform .2s ease, border-color .2s ease; }
-.challenge:hover { transform: translateY(-3px); border-color: rgba(200,149,47,.5); }
-.challenge .tag { font: 600 .7rem/1.3 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--navy); }
-.challenge h3 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); line-height: 1.15; }
-.challenge p { color: var(--muted); font-size: .95rem; }
-.challenge .more { margin-top: auto; padding-top: 8px; font-weight: 600; font-size: .92rem; color: var(--gold-deep); }
-@media (prefers-reduced-motion: reduce) { .challenge, .challenge:hover { transition: none; transform: none; } }
-@media (max-width: 960px) { .challenges { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 620px) { .challenges { grid-template-columns: 1fr; } }
+/* Why now: one grid, hairline dividers, boxed tags, big sourced figures */
+.whynow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.wn-tile { position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 30px 30px 28px; background: var(--card); color: inherit; text-decoration: none; min-height: 300px; transition: background .2s ease; }
+.wn-tile:hover { background: #FFFCF5; }
+.wn-tag { align-self: flex-end; font: 600 .68rem/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--text); border: 1px solid #CFCABD; padding: 6px 9px; border-radius: 3px; }
+.wn-tag.solid { background: var(--ink); border-color: var(--ink); color: #FFFFFF; }
+.wn-figure { margin-top: 18px; font: 800 clamp(2.6rem, 4.2vw, 3.7rem)/1 var(--display); letter-spacing: -0.04em; color: var(--gold-deep); font-variant-numeric: tabular-nums; }
+.wn-caption { color: var(--muted); font-size: .98rem; max-width: 26rem; }
+.wn-source { font-size: .76rem; color: var(--dim); }
+.wn-source a { color: inherit; }
+.wn-link { margin-top: auto; padding-top: 14px; font-weight: 600; font-size: .95rem; color: var(--text); text-decoration: none; }
+.wn-link span { display: inline-block; color: var(--gold-deep); transition: transform .2s ease; }
+.wn-tile:hover .wn-link span, .wn-link:hover span { transform: translateX(4px); }
+.wn-link:hover { color: var(--gold-deep); }
+.wn-feature { background: #F6EEDC; justify-content: flex-start; }
+.wn-feature:hover { background: #F2E7CF; }
+.wn-feature h3 { margin-top: auto; font-size: clamp(1.5rem, 2.2vw, 1.9rem); line-height: 1.12; }
+.wn-feature p { color: var(--muted); max-width: 26rem; }
+.wn-feature .wn-link { margin-top: 6px; }
+.wn-also { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; margin-top: 22px; font-size: .95rem; }
+.wn-also span:first-child { font: 600 .72rem var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.wn-also a { color: var(--text); font-weight: 600; text-decoration: none; }
+.wn-also a span { color: var(--gold-deep); }
+.wn-also a:hover { color: var(--gold-deep); }
+@media (prefers-reduced-motion: reduce) { .wn-tile, .wn-link span { transition: none; } }
+@media (max-width: 960px) { .whynow { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .whynow { grid-template-columns: 1fr; } .wn-tile { min-height: 0; padding: 24px 22px; } .wn-feature h3 { margin-top: 18px; } }
 
 /* first engagement */
 .offer { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; padding: clamp(28px, 5vw, 56px); border-radius: 28px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.12); box-shadow: 0 40px 90px -50px rgba(0,0,0,.7); }
