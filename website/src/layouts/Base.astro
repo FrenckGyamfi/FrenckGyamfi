@@ -3,6 +3,7 @@ import '../styles/global.css';
 import content from '../data/content.json';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import siteJs from '../scripts/site.js?raw';
 
 interface Props { title?: string; description?: string; path?: string; noindex?: boolean; }
 const { meta } = content;
@@ -13,6 +14,7 @@ const url = meta.url + path;
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script is:inline>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{title}</title>
   <meta name="description" content={description}>
@@ -51,6 +53,6 @@ const url = meta.url + path;
   </main>
   <Footer />
   <a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 18 18" fill="none" stroke-width="2"><path d="M9 15V3M4 8l5-5 5 5"/></svg></a>
-  <script src="../scripts/site.js"></script>
+  <script is:inline set:html={siteJs} />
 </body>
 </html>

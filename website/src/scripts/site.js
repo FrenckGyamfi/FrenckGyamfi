@@ -105,6 +105,22 @@
     document.querySelectorAll('.svc').forEach(function (s) { io.observe(s); });
   }
 
+  /* "When to call us": one tile is open at a time; clicking another figure unfolds its title and answer */
+  var folds = Array.prototype.slice.call(document.querySelectorAll('.wn-fold'));
+  function openFold(f) {
+    folds.forEach(function (o) {
+      var on = o === f;
+      o.classList.toggle('open', on);
+      o.querySelector('.wn-toggle').setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+  }
+  folds.forEach(function (f) {
+    f.addEventListener('click', function (e) {
+      if (f.classList.contains('open') || e.target.closest('a')) return;
+      openFold(f);
+    });
+  });
+
   /* Copy email */
   var copyBtn = document.getElementById('copy-email');
   if (copyBtn) copyBtn.addEventListener('click', function () {

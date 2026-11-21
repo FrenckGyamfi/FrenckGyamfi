@@ -30,23 +30,33 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
     <div class="wrap">
       <Head {...challenges} />
       <div class="whynow">
-        <a class="wn-tile wn-feature" href={challenges.feature.href}>
-          <span class="wn-tag solid">{challenges.feature.tag}</span>
-          <h3>{challenges.feature.title}</h3>
-          <p>{challenges.feature.text}</p>
-          <span class="wn-link">{challenges.feature.link} <span aria-hidden="true">→</span></span>
-        </a>
-        {challenges.stats.map((t) => (
-          <div class="wn-tile">
+        {challenges.stats.map((t, i) => (
+          <div class:list={['wn-tile', 'wn-fold', { open: i === 0 }]}>
             <span class="wn-tag">{t.tag}</span>
-            <p class="wn-figure">{t.figure}</p>
-            <p class="wn-caption">{t.caption}</p>
-            <p class="wn-source">Source: <a href={t.sourceUrl} target="_blank" rel="noopener">{t.source}</a></p>
-            <a class="wn-link" href={t.href}>{t.question} <span aria-hidden="true">→</span></a>
+            <div class="wn-body">
+              <div class="wn-stat">
+                <p class="wn-figure">{t.figure}</p>
+                <p class="wn-caption">{t.caption}</p>
+                <p class="wn-source">Source: <a href={t.sourceUrl} target="_blank" rel="noopener">{t.source}</a></p>
+              </div>
+              <div class="wn-open">
+                <h3 class="wn-q"><button type="button" class="wn-toggle" aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={'wn-p' + i}>{t.title}</button></h3>
+                <div class="wn-panel" id={'wn-p' + i}>
+                  <p>{t.text}</p>
+                  <a class="wn-link" href={t.href}>{challenges.link} <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
+        <div class="wn-tile wn-more">
+          <span class="wn-tag">{challenges.alsoTag}</span>
+          <div class="wn-more-links">
+            {challenges.also.map((a) => <a href={a.href}>{a.question} <span aria-hidden="true">→</span></a>)}
+          </div>
+        </div>
       </div>
-      <p class="wn-also"><span>{challenges.alsoLabel}</span>{challenges.also.map((a) => <a href={a.href}>{a.question} <span aria-hidden="true">→</span></a>)}</p>
+      <p class="wn-hint">{challenges.hint}</p>
     </div>
   </section>
 
