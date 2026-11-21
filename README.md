@@ -1,11 +1,43 @@
 # DataiTECH website
 
-Static one-page website for DataiTECH (Data Informatics and Technologies), Zoetermeer.
+Live at **https://dataitech.eu**. The site is built with [Astro](https://astro.build) in `website/`.
+
+## Website (Astro)
+
+| Path | What it is |
+| --- | --- |
+| `website/src/data/content.json` | **All website text**: hero, challenges, assessment, services, sectors, platforms, method, FAQ, contact, footer, SEO details |
+| `website/src/pages/index.astro` | Home page layout (one block per section) |
+| `website/src/pages/privacy.astro` | Privacy statement |
+| `website/src/layouts/Base.astro` | Page frame: head, SEO tags, header, footer |
+| `website/src/components/` | Header, footer, section heading, arrow icon |
+| `website/src/styles/global.css` | Premium design (colours, type, layout) |
+| `website/src/scripts/site.js` | Menu, header on scroll, 1s-and-0s animation, services index, copy email |
+| `website/public/` | Fonts, images, icons, `.htaccess`, `robots.txt`, `sitemap.xml` (copied as-is) |
+
+Work on the site (Node 22.23+):
+
+```
+cd website
+npm install
+npm run dev       # live preview at http://localhost:4321
+npm run build     # static site in website/dist
+```
+
+## Publishing to Hostinger
+
+1. `python3 tools/make_deploy.py dataitech-website.zip` (builds the site and zips `website/dist`).
+2. hPanel › File Manager › `public_html`: delete the old site files, upload the zip, extract, delete the zip.
+3. Check https://dataitech.eu.
+
+Do not connect this repository to Hostinger's Git deployment: it would publish the private `brand-kit/` folder.
+
+## Other files
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | **Main site** (premium design). Built from `dark.html`: `python3 tools/build_premium.py dark.html index.html` |
-| `dark.html` | Dark alternative, and the **single source of all site text**: edit copy here, then rebuild (marked `noindex`) |
+| `index.html` | Previous build of the main site (before Astro), kept for reference |
+| `dark.html` | Dark alternative from before Astro (marked `noindex`); not used by the live site |
 | `light.html` | Light alternative, built from `dark.html` with `tools/make_light_version.py` (marked `noindex`) |
 | `privacy.html` | Privacy statement (AVG/GDPR) – have it reviewed before launch |
 | `fonts/` | Self-hosted fonts (Plus Jakarta Sans, Montserrat, Inter, IBM Plex Mono – SIL Open Font License) |
@@ -14,20 +46,3 @@ Static one-page website for DataiTECH (Data Informatics and Technologies), Zoete
 | `images/` | Logo (light and dark versions) and service illustrations (WebP); `images/dark/` has transparent versions for the dark site |
 | `og-image.png` | 1200×630 preview image for LinkedIn and other social links |
 | `tools/` | Build scripts for the site versions, illustrations, invoice and brand kit |
-
-## Publishing to Hostinger (dataitech.eu)
-
-1. Build the upload package: `python3 tools/make_deploy.py dataitech-website.zip`.
-   It contains only public files; `brand-kit/`, `tools/` and the dark/light alternatives are never included.
-2. In Hostinger hPanel, make sure SSL is active for dataitech.eu (Security › SSL). The package forces HTTPS.
-3. Open File Manager › `public_html`, delete Hostinger's default page (`default.php` or `index.php`), upload the zip and extract it there.
-4. Check https://dataitech.eu, then submit `https://dataitech.eu/sitemap.xml` in Google Search Console.
-
-Do not connect this repository to Hostinger's Git deployment: it would publish the private `brand-kit/` folder.
-
-## Changing the website text
-
-1. Edit the text in `dark.html`.
-2. Rebuild the other versions:
-   - `python3 tools/make_light_version.py dark.html light.html`
-   - `python3 tools/build_premium.py dark.html index.html`

@@ -1,0 +1,14 @@
+---
+import content from '../data/content.json';
+const { legal, slogan } = content.footer;
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="legal">
+      <img class="foot-logo" src="/images/logo-on-dark.png" alt="DataiTECH" width="504" height="120" loading="lazy">
+      {legal.map((l) => <span set:html={l} />)}
+      <a href="/privacy.html">Privacy statement</a>
+    </div>
+    <span class="mono">{slogan}</span>
+  </div>
+</footer>

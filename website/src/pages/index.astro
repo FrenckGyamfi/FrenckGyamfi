@@ -1,0 +1,160 @@
+---
+import Base from '../layouts/Base.astro';
+import Head from '../components/Head.astro';
+import Arrow from '../components/Arrow.astro';
+import c from '../data/content.json';
+const { hero, challenges, offer, services, sectors, platforms, method, faq, contact } = c;
+---
+<Base>
+  <section class="hero dark" aria-labelledby="hero-title">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="eyebrow">{hero.eyebrow}</p>
+      <h1 id="hero-title"><span class="line">Data and AI<span class="pd">.</span></span><br><span class="line">Now it <span class="gold">makes sense</span><span class="pd gold">.</span></span></h1>
+      <p class="hero-lead" set:html={hero.lead} />
+      <div class="hero-ctas">
+        <a class="btn gold" href="#first-engagement">Request the assessment <Arrow /></a>
+        <a class="btn" href="#challenges">When to call us <Arrow /></a>
+      </div>
+      <ul class="assure" aria-label="What you can count on">
+        {hero.assure.map((a) => <li>{a}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="statement" aria-label="Our conviction">
+    <div class="wrap"><p set:html={c.statement} /></div>
+  </section>
+
+  <section class="band" id="challenges">
+    <div class="wrap">
+      <Head {...challenges} />
+      <div class="challenges">
+        {challenges.items.map((i) => (
+          <a class="challenge card" href={i.href}>
+            <span class="tag">{i.tag}</span>
+            <h3 set:html={i.title} />
+            <p set:html={i.text} />
+            <span class="more">{i.more}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="first-engagement">
+    <div class="wrap">
+      <div class="offer">
+        <div>
+          <p class="eyebrow">{offer.eyebrow}</p>
+          <h2 set:html={offer.title} />
+          <p class="offer-lede" set:html={offer.lede} />
+          <a class="btn gold" href="#contact">Request the assessment <Arrow /></a>
+        </div>
+        <dl class="facts">
+          {offer.facts.map((f) => <div><dt>{f.term}</dt><dd set:html={f.detail} /></div>)}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="services">
+    <div class="wrap">
+      <Head {...services} />
+      <div class="services">
+        <ul class="svc-index" id="svc-index">
+          {services.items.map((s, i) => <li><a href={'#' + s.id} class:list={{ active: i === 0 }} set:html={s.label} /></li>)}
+        </ul>
+        <div class="svc-cards">
+          {services.items.map((s) => (
+            <article class="svc card" id={s.id}>
+              <div>
+                <span class="num">{s.num}</span>
+                <span class="art-tile"><img class="art photo" src={'/' + s.image} alt={s.alt} width={s.width} height={s.height} loading="lazy" decoding="async"></span>
+              </div>
+              <div>
+                <h3 set:html={s.title} />
+                <p set:html={s.text} />
+                <p class="cats">{s.capsLabel}</p>
+                <ul>{s.caps.map((cap) => <li set:html={cap} />)}</ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="sectors">
+    <div class="wrap">
+      <Head {...sectors} />
+      <div class="sectors">
+        {sectors.items.map((s) => <article class="sector card"><Fragment set:html={s.icon} /><h3 set:html={s.title} /><p set:html={s.text} /></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="technology">
+    <div class="wrap">
+      <Head {...platforms} />
+      <div class="eco" aria-label="Core technology ecosystem">
+        {platforms.core.map((p) => <div class="eco-item card"><b set:html={p.name} /><span set:html={p.detail} /></div>)}
+      </div>
+      <div class="toolkit" aria-label="Also in our toolkit">
+        <span class="lbl">{platforms.toolkitLabel}</span>
+        {platforms.toolkit.map((t) => <span class="p" set:html={t.growing ? `${t.name} <span class="dev">Growing</span>` : t.name} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="how-we-work">
+    <div class="wrap">
+      <Head {...method} />
+      <div class="steps">
+        {method.steps.map((s) => (
+          <article class="step card">
+            <span class="n">{s.step}</span>
+            <span class="ask">{s.question}</span>
+            <h3 set:html={s.title} />
+            <p set:html={s.text} />
+            <ul>{s.points.map((p) => <li set:html={p} />)}</ul>
+            <p class="out" set:html={s.result} />
+          </article>
+        ))}
+      </div>
+      <h3 class="outcomes-head">{method.outcomesTitle}</h3>
+      <div class="outcomes">
+        {method.outcomes.map((o) => <div class="card"><span class="index">{o.label}</span><h3 set:html={o.title} /><p set:html={o.text} /></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="faq">
+    <div class="wrap faq-grid">
+      <div class="intro"><p class="eyebrow">{faq.eyebrow}</p><h2 set:html={faq.title} /><p set:html={faq.intro} /></div>
+      <div class="faq card">
+        {faq.items.map((f) => <details><summary>{f.question}</summary><div class="a" set:html={f.answer} /></details>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">{contact.eyebrow}</p>
+      <h2 set:html={contact.title} />
+      <div class="contact-row">
+        <div class="contact-copy">
+          <p set:html={contact.text} />
+          <div class="person">
+            <img class="portrait" src={'/' + contact.person.photo} alt={contact.person.name} width="480" height="480" loading="lazy" decoding="async">
+            <div><b>{contact.person.name}</b><span>{contact.person.role}</span></div>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <div class="email"><a id="email" href={'mailto:' + contact.email}>{contact.email}</a><button type="button" id="copy-email">Copy</button></div>
+          <a class="btn" href={contact.linkedin} target="_blank" rel="noopener">Connect on LinkedIn <Arrow /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

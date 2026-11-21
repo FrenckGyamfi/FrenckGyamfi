@@ -1,0 +1,9 @@
+---
+/* Section heading: eyebrow, title and intro side by side */
+interface Props { eyebrow: string; title: string; intro?: string; }
+const { eyebrow, title, intro } = Astro.props;
+---
+<div class="head">
+  <div><p class="eyebrow">{eyebrow}</p><h2 set:html={title} /></div>
+  {intro && <p set:html={intro} />}
+</div>
