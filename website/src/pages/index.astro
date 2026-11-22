@@ -2,7 +2,9 @@
 import Base from '../layouts/Base.astro';
 import Head from '../components/Head.astro';
 import Arrow from '../components/Arrow.astro';
+import Photo from '../components/Photo.astro';
 import c from '../data/content.json';
+const { photos } = c;
 const { hero, challenges, offer, services, sectors, platforms, method, faq, contact } = c;
 ---
 <Base>
@@ -23,7 +25,7 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
   </section>
 
   <section class="statement" aria-label="Our conviction">
-    <div class="wrap"><p set:html={c.statement} /></div>
+    <div class="wrap"><p set:html={c.statement} /><Photo name="photo-datacentre" {...photos.datacentre} class="photo-statement" /></div>
   </section>
 
   <section class="band" id="challenges">
@@ -62,6 +64,7 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
 
   <section class="band dark" id="first-engagement">
     <div class="wrap">
+      <Photo name="photo-engineer" {...photos.engineer} pos="center 22%" posM="48% center" class="photo-band" />
       <div class="offer">
         <div>
           <p class="eyebrow">{offer.eyebrow}</p>
@@ -115,6 +118,7 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
   <section class="band" id="technology">
     <div class="wrap">
       <Head {...platforms} />
+      <Photo name="photo-network" {...photos.network} posM="55% center" class="photo-band" />
       <div class="eco" aria-label="Core technology ecosystem">
         {platforms.core.map((p) => <div class="eco-item card"><b set:html={p.name} /><span set:html={p.detail} /></div>)}
       </div>
@@ -128,6 +132,7 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
   <section class="band dark" id="how-we-work">
     <div class="wrap">
       <Head {...method} />
+      <Photo name="photo-team" {...photos.team} pos="center 12%" posM="22% center" class="photo-band" />
       <div class="steps">
         {method.steps.map((s) => (
           <article class="step card">
@@ -149,7 +154,7 @@ const { hero, challenges, offer, services, sectors, platforms, method, faq, cont
 
   <section class="band" id="faq">
     <div class="wrap faq-grid">
-      <div class="intro"><p class="eyebrow">{faq.eyebrow}</p><h2 set:html={faq.title} /><p set:html={faq.intro} /></div>
+      <div class="intro"><p class="eyebrow">{faq.eyebrow}</p><h2 set:html={faq.title} /><p set:html={faq.intro} /><Photo name="photo-tablet" {...photos.tablet} pos="32% center" class="photo-side" sizes="(max-width: 860px) calc(100vw - 40px), 460px" /></div>
       <div class="faq card">
         {faq.items.map((f) => <details><summary>{f.question}</summary><div class="a" set:html={f.answer} /></details>)}
       </div>

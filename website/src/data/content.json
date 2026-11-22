@@ -549,5 +549,32 @@
       "href": "#faq",
       "label": "FAQ"
     }
-  ]
+  ],
+  "photos": {
+    "datacentre": {
+      "alt": "A bright data centre aisle lined with server racks",
+      "w": 1200,
+      "h": 509
+    },
+    "engineer": {
+      "alt": "An engineer with a laptop in front of server racks",
+      "w": 1200,
+      "h": 664
+    },
+    "network": {
+      "alt": "Visualisation of connected nodes and data blocks across a server rack",
+      "w": 1200,
+      "h": 643
+    },
+    "team": {
+      "alt": "Two engineers reviewing server racks together in a data centre",
+      "w": 1200,
+      "h": 670
+    },
+    "tablet": {
+      "alt": "An engineer checking a tablet between network racks",
+      "w": 1200,
+      "h": 672
+    }
+  }
 }

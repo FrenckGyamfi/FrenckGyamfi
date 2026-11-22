@@ -3,12 +3,15 @@ import '../styles/global.css';
 import content from '../data/content.json';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import siteJs from '../scripts/site.js?raw';
+import siteSrc from '../scripts/site.js?raw';
+import { minify } from 'rolldown/experimental';
 
 interface Props { title?: string; description?: string; path?: string; noindex?: boolean; }
 const { meta } = content;
 const { title = meta.title, description = meta.description, path = '', noindex = false } = Astro.props;
 const url = meta.url + path;
+// Inlined (not a separate file) so the site also works from disk and from a subfolder; minified at build time
+const siteJs = (await minify('site.js', siteSrc, { compress: true, mangle: true })).code;
 ---
 <!doctype html>
 <html lang="en">
