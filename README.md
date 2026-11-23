@@ -26,9 +26,19 @@ npm run build     # static site in website/dist (open dist/index.html directly, 
 
 ## Publishing to Hostinger
 
+**Automatic (on merge to `main`).** `.github/workflows/publish.yml` builds the site and uploads `website/dist` to `public_html` over FTPS, then checks that dataitech.eu serves the new page. It runs when a change to `website/` lands on `main`, or by hand from the Actions tab ("Publish website" › Run workflow). Only the built site is uploaded.
+
+One-time setup:
+1. hPanel › Files › FTP Accounts: create an account (e.g. `deploy`) whose folder is `public_html`. Note the FTP host, username and password.
+2. GitHub › repository Settings › Secrets and variables › Actions › New repository secret: add `FTP_SERVER`, `FTP_USERNAME` and `FTP_PASSWORD`.
+3. Only if the account's folder is not `public_html` itself: add a repository *variable* `FTP_DIR`, e.g. `public_html/`.
+
+**By hand (fallback).**
 1. `python3 tools/make_deploy.py dataitech-website.zip` (builds the site and zips `website/dist`).
 2. hPanel › File Manager › `public_html`: delete the old site files, upload the zip, extract, delete the zip.
 3. Check https://dataitech.eu.
+
+Earlier live versions are kept in `archive/` (see `archive/README.md`).
 
 Do not connect this repository to Hostinger's Git deployment: it would publish the private `brand-kit/` folder.
 
